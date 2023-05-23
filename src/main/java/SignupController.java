@@ -42,7 +42,7 @@ public class SignupController {
     }
 
     @FXML
-    public void signup() {
+    public void signUp() {
         String name = nameField.getText();
         String address = addressField.getText();
         String phone = phoneField.getText();

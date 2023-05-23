@@ -40,7 +40,6 @@ public class LoginController {
                 String[] fields = customer.split(",");
                 if (fields.length >= 8 && fields[6].trim().equals(username) && fields[7].trim().equals(password)) {
                     showAlert("Login Successful!", "Welcome, " + fields[1].trim() + "!");
-                    return;
                 }
             }
 

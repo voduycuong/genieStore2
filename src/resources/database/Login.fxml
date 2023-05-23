@@ -56,7 +56,7 @@
             </HBox>
             <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="235.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="240.0" AnchorPane.rightAnchor="240.0">
                <image>
-                  <Image url="@your-logo-square.png" />
+                  <Image url="@logo-square.png" />
                </image>
                <rotationAxis>
                   <Point3D />
