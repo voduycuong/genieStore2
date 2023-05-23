@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.MenuBarController">
+    <children>
+        <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1000.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleExitMenuItem" text="Exit" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Customers">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleCreateCustomersMenuItem" text="Create" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleEditCustomersMenuItem" text="Edit" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleDeleteCustomersMenuItem" text="Delete" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Items">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleCreateItemsMenuItem" text="Create" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleEditItemsMenuItem" text="Edit" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleDeleteItemsMenuItem" text="Delete" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Option">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleAppearanceMenuItem" text="Appearance" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleAboutMenuItem" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </children>
+</AnchorPane>
