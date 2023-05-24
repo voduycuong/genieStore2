@@ -17,6 +17,7 @@ import java.util.List;
 public class LoginController {
 
     private Stage stage;
+    private String currentUserId;
 
     @FXML
     private TextField usernameField;
@@ -26,6 +27,10 @@ public class LoginController {
 
     public void setStage(Stage stage) {
         this.stage = stage;
+    }
+
+    public String getCurrentUserId() {
+        return currentUserId;
     }
 
     @FXML
@@ -39,7 +44,9 @@ public class LoginController {
             for (String customer : customerData) {
                 String[] fields = customer.split(",");
                 if (fields.length >= 8 && fields[6].trim().equals(username) && fields[7].trim().equals(password)) {
+                    currentUserId = fields[0].trim(); // Set the current user ID
                     showAlert("Login Successful!", "Welcome, " + fields[1].trim() + "!");
+                    return; // Exit the method after successful login
                 }
             }
 

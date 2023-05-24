@@ -1,5 +1,9 @@
 package main.java;
 
+import javafx.fxml.FXML;
+import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +12,17 @@ public class RentalController {
 
     private List<Item> items;
     private List<Customer> customers;
+    private String currentUserId;
+    private String currentItemId;
+
+    @FXML
+    private ImageView itemImageView;
+    @FXML
+    private Text itemNameText;
+    @FXML
+    private Text amountText;
+    @FXML
+    private Text yearText;
 
     public RentalController() {
         items = new ArrayList<>();
@@ -17,11 +32,34 @@ public class RentalController {
         loadCustomers();
     }
 
-    public void rentItem(String itemId, String customerId) {
-        Item item = getItemById(itemId);
-        Customer customer = getCustomerById(customerId);
+    public void setCurrentUserId(String currentUserId) {
+        this.currentUserId = currentUserId;
+    }
 
-        if (item != null && customer != null) {
+    public void setCurrentItemId(String currentItemId) {
+        this.currentItemId = currentItemId;
+    }
+
+    public void setItemDetails(String itemId) {
+        Item item = getItemById(itemId);
+        if (item != null) {
+            itemNameText.setText(item.getTitle());
+            amountText.setText("Amount: " + item.getNumberOfCopies());
+            yearText.setText("Year: " + item.getItemId());
+        }
+    }
+
+    @FXML
+    public void rentItem() {
+        if (currentUserId == null || currentItemId == null) {
+            System.out.println("No user or item selected.");
+            return;
+        }
+
+        Customer customer = getCustomerById(currentUserId);
+        Item item = getItemById(currentItemId);
+
+        if (customer != null && item != null) {
             if (item.isAvailable()) {
                 if (item.getLoanType().equals("2-day")) {
                     if (customer.getCustomerType().equals("Guest")) {
@@ -36,7 +74,7 @@ public class RentalController {
                             }
                         }
                         item.decreaseCopies();
-                        customer.rentItem(itemId);
+                        customer.rentItem(currentItemId);
                         System.out.println("Item rented successfully.");
                         updateItemsFile(); // Update the items.txt file
                         updateCustomersFile(); // Update the customers.txt file
@@ -45,7 +83,7 @@ public class RentalController {
                     }
                 } else {
                     item.decreaseCopies();
-                    customer.rentItem(itemId);
+                    customer.rentItem(currentItemId);
                     System.out.println("Item rented successfully.");
                     updateItemsFile(); // Update the items.txt file
                     updateCustomersFile(); // Update the customers.txt file
@@ -58,21 +96,24 @@ public class RentalController {
         }
     }
 
-    public void returnItem(String itemId, String customerId) {
-        Item item = getItemById(itemId);
-        if (item != null) {
+    @FXML
+    public void returnItem() {
+        if (currentUserId == null || currentItemId == null) {
+            System.out.println("No user or item selected.");
+            return;
+        }
+
+        Customer customer = getCustomerById(currentUserId);
+        Item item = getItemById(currentItemId);
+
+        if (customer != null && item != null) {
             item.increaseCopies();
-            Customer customer = getCustomerById(customerId);
-            if (customer != null) {
-                customer.returnItem(itemId); // Remove returned item from customer's list
-                System.out.println("Item returned successfully.");
-                updateItemsFile(); // Update the items.txt file
-                updateCustomersFile(); // Update the customers.txt file
-            } else {
-                System.out.println("Customer not found.");
-            }
+            customer.returnItem(currentItemId); // Remove returned item from customer's list
+            System.out.println("Item returned successfully.");
+            updateItemsFile(); // Update the items.txt file
+            updateCustomersFile(); // Update the customers.txt file
         } else {
-            System.out.println("Item not found.");
+            System.out.println("Item or customer not found.");
         }
     }
 
@@ -112,7 +153,6 @@ public class RentalController {
             System.out.println("Failed to update items file: " + e.getMessage());
         }
     }
-
 
     private Item getItemById(String itemId) {
         for (Item item : items) {
@@ -243,14 +283,5 @@ public class RentalController {
         } catch (IOException e) {
             System.out.println("Failed to load customer data: " + e.getMessage());
         }
-    }
-
-    public static void main(String[] args) {
-        RentalController rentalController = new RentalController();
-
-        rentalController.rentItem("I017-2012", "C001");  // Renting an item
-        rentalController.rentItem("I015-1984", "C002");  // Renting an item
-        rentalController.returnItem("I001-2001", "C001");  // Returning an item
-        rentalController.returnItem("I002-1988", "C003");  // Returning an item
     }
 }
