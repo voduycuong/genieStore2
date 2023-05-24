@@ -146,7 +146,7 @@ I145-1998,The Big Lebowski,DVD,1-week,3,1.80,Comedy
 I146-2017,Hollow Knight,Game,2-day,2,9.99
 I147-1999,The Matrix,Record,1-week,1,1.10,Sci-Fi
 I148-2006,Gears of War,Game,1-week,3,6.99
-I149-2001,Monsters, Inc.,DVD,1-week,2,1.75,Comedy
+I149-2001,Monsters Inc.,DVD,1-week,2,1.75,Comedy
 I150-2013,Grand Theft Auto V,Game,2-day,2,7.99
 I151-1997,The Lost World: Jurassic Park,Record,2-day,3,1.25,Action
 I152-2014,Dragon Age: Inquisition,Game,1-week,1,9.99
