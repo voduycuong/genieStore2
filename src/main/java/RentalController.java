@@ -38,6 +38,8 @@ public class RentalController {
                         item.decreaseCopies();
                         customer.rentItem(itemId);
                         System.out.println("Item rented successfully.");
+                        updateItemsFile(); // Update the items.txt file
+                        updateCustomersFile(); // Update the customers.txt file
                     } else {
                         System.out.println("Only Regular and VIP customers can borrow 2-day items.");
                     }
@@ -45,10 +47,9 @@ public class RentalController {
                     item.decreaseCopies();
                     customer.rentItem(itemId);
                     System.out.println("Item rented successfully.");
+                    updateItemsFile(); // Update the items.txt file
+                    updateCustomersFile(); // Update the customers.txt file
                 }
-
-                // Update the customers.txt file
-                updateCustomersFile();
             } else {
                 System.out.println("Item is not available for rent.");
             }
@@ -56,7 +57,6 @@ public class RentalController {
             System.out.println("Item or customer not found.");
         }
     }
-
 
     public void returnItem(String itemId, String customerId) {
         Item item = getItemById(itemId);
@@ -66,6 +66,7 @@ public class RentalController {
             if (customer != null) {
                 customer.returnItem(itemId); // Remove returned item from customer's list
                 System.out.println("Item returned successfully.");
+                updateItemsFile(); // Update the items.txt file
                 updateCustomersFile(); // Update the customers.txt file
             } else {
                 System.out.println("Customer not found.");
@@ -91,6 +92,24 @@ public class RentalController {
             }
         } catch (IOException e) {
             System.out.println("Failed to update customers file: " + e.getMessage());
+        }
+    }
+
+    public void updateItemsFile() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/resources/database/items.txt"))) {
+            for (Item item : items) {
+                String line = item.getItemId() + "," + item.getTitle() + "," + item.getRentType() + "," +
+                        item.getLoanType() + "," + item.getNumberOfCopies() + "," + item.getRentalFee();
+
+                if (item instanceof Record || item instanceof DVD) {
+                    line += "," + item.getGenre();
+                }
+
+                writer.write(line);
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            System.out.println("Failed to update items file: " + e.getMessage());
         }
     }
 

@@ -4,20 +4,20 @@ I003-1992,Alpha Dog,Record,1-week,3,1.99,Action
 I004-1999,Rat Race,DVD,1-week,3,1.99,Horror
 I005-2015,Halo,Game,2-day,2,4.99
 I006-2013,Halloween,DVD,2-day,1,0.99,Horror
-I007-1995,Jumanji,DVD,2-day,4,1.50,Action
+I007-1995,Jumanji,DVD,2-day,4,1.5,Action
 I008-1997,Titanic,Record,1-week,3,0.75,Drama
 I009-2004,Half-Life 2,Game,1-week,2,5.99
 I010-2010,Inception,DVD,2-day,5,2.99,Action
 I011-1980,The Shining,Record,1-week,3,0.99,Horror
 I012-2020,The Last of Us Part II,Game,2-day,1,9.99
-I013-2005,Brokeback Mountain,DVD,1-week,3,1.50,Drama
+I013-2005,Brokeback Mountain,DVD,1-week,3,1.5,Drama
 I014-2008,Grand Theft Auto IV,Game,1-week,3,6.99
 I015-1984,Ghostbusters,Record,2-day,2,1.25,Comedy
 I016-2009,Zombieland,DVD,2-day,1,2.25,Comedy
 I017-2012,The Dark Knight Rises,DVD,1-week,4,1.75,Action
 I018-2007,BioShock,Game,2-day,5,7.99
 I019-1975,Jaws,Record,1-week,2,0.85,Horror
-I020-2001,The Lord of the Rings: The Fellowship of the Ring,DVD,2-day,3,2.50,Drama
+I020-2001,The Lord of the Rings: The Fellowship of the Ring,DVD,2-day,3,2.5,Drama
 I021-1982,E.T. the Extra-Terrestrial,Record,1-week,4,0.95,Drama
 I022-2018,Red Dead Redemption II,Game,1-week,1,9.99
 I023-2006,Cars,DVD,2-day,3,1.75,Comedy
@@ -29,122 +29,122 @@ I028-1989,Dead Poets Society,Record,1-week,2,0.99,Drama
 I029-1998,Half-Life,Game,2-day,2,5.99
 I030-2003,Finding Nemo,DVD,1-week,3,1.75,Comedy
 I031-2011,The Elder Scrolls V: Skyrim,Game,1-week,2,7.99
-I032-1986,Top Gun,Record,2-day,1,1.20,Action
-I033-1991,Beauty and the Beast,DVD,1-week,3,1.80,Drama
-I034-2000,The Sims,Game,2-day,4,6.50
-I035-1995,Seven,DVD,1-week,3,2.10,Drama
-I036-1993,Schindler's List,Record,1-week,2,1.00,Drama
+I032-1986,Top Gun,Record,2-day,1,1.2,Action
+I033-1991,Beauty and the Beast,DVD,1-week,3,1.8,Drama
+I034-2000,The Sims,Game,2-day,4,6.5
+I035-1995,Seven,DVD,1-week,3,2.1,Drama
+I036-1993,Schindler's List,Record,1-week,2,1.0,Drama
 I037-2005,Resident Evil 4,Game,2-day,2,6.99
 I038-2017,Get Out,DVD,1-week,3,1.95,Horror
 I039-1997,Final Fantasy VII,Game,2-day,1,8.99
-I040-1984,Indiana Jones and the Temple of Doom,Record,1-week,3,1.10,Action
+I040-1984,Indiana Jones and the Temple of Doom,Record,1-week,3,1.1,Action
 I041-2019,Resident Evil 2 Remake,Game,1-week,2,9.99
-I042-2014,Interstellar,DVD,2-day,3,2.20,Drama
+I042-2014,Interstellar,DVD,2-day,3,2.2,Drama
 I043-1987,The Princess Bride,Record,1-week,4,1.15,Comedy
-I044-2008,The Dark Knight,DVD,2-day,1,2.50,Action
+I044-2008,The Dark Knight,DVD,2-day,1,2.5,Action
 I045-2013,Bioshock Infinite,Game,1-week,3,7.99
 I046-2003,Finding Nemo,DVD,1-week,4,1.75,Comedy
 I047-1996,Duke Nukem 3D,Game,2-day,3,6.99
 I048-2005,King Kong,Record,2-day,2,1.25,Action
-I049-2019,Joker,DVD,1-week,1,2.50,Drama
+I049-2019,Joker,DVD,1-week,1,2.5,Drama
 I050-2007,Super Mario Galaxy,Game,1-week,2,8.99
-I051-1968,2001: A Space Odyssey,Record,1-week,3,1.00,Sci-Fi
+I051-1968,2001: A Space Odyssey,Record,1-week,3,1.0,Sci-Fi
 I052-2010,Inception,DVD,2-day,4,2.25,Action
 I053-2009,Uncharted 2: Among Thieves,Game,1-week,1,7.99
-I054-1997,Titanic,Record,2-day,2,1.30,Drama
+I054-1997,Titanic,Record,2-day,2,1.3,Drama
 I055-2006,Cars,DVD,1-week,3,1.75,Comedy
 I056-2011,Portal 2,Game,2-day,2,8.99
-I057-2014,Guardians of the Galaxy,DVD,1-week,4,2.10,Action
-I058-1985,Back to the Future,Record,1-week,2,1.20,Sci-Fi
+I057-2014,Guardians of the Galaxy,DVD,1-week,4,2.1,Action
+I058-1985,Back to the Future,Record,1-week,2,1.2,Sci-Fi
 I059-2015,The Witcher 3: Wild Hunt,Game,2-day,1,9.99
-I060-1994,Forrest Gump,DVD,1-week,3,2.00,Drama
+I060-1994,Forrest Gump,DVD,1-week,3,2.0,Drama
 I061-2018,God of War,Game,1-week,3,8.99
 I062-2008,Wall-E,DVD,2-day,4,1.85,Comedy
-I063-1990,Home Alone,Record,1-week,2,1.20,Comedy
+I063-1990,Home Alone,Record,1-week,2,1.2,Comedy
 I064-2003,Call of Duty,Game,2-day,3,6.99
-I065-2012,The Avengers,DVD,1-week,1,2.50,Action
-I066-2000,Gladiator,Record,1-week,3,1.10,Drama
+I065-2012,The Avengers,DVD,1-week,1,2.5,Action
+I066-2000,Gladiator,Record,1-week,3,1.1,Drama
 I067-2016,Overwatch,Game,1-week,2,8.99
 I068-1998,Saving Private Ryan,DVD,2-day,4,2.25,Drama
 I069-2010,Red Dead Redemption,Game,2-day,1,7.99
 I070-1999,Fight Club,Record,1-week,3,1.15,Action
 I071-2013,Grand Theft Auto V,Game,1-week,2,9.99
 I072-2001,Shrek,DVD,2-day,3,1.75,Comedy
-I073-1982,Blade Runner,Record,1-week,4,1.00,Sci-Fi
+I073-1982,Blade Runner,Record,1-week,4,1.0,Sci-Fi
 I074-2011,The Elder Scrolls V: Skyrim,Game,2-day,2,8.99
-I075-2009,Avatar,DVD,1-week,3,2.00,Action
-I076-1993,Jurassic Park,Record,2-day,3,1.30,Action
+I075-2009,Avatar,DVD,1-week,3,2.0,Action
+I076-1993,Jurassic Park,Record,2-day,3,1.3,Action
 I077-2017,Horizon Zero Dawn,Game,1-week,2,9.99
-I078-2002,Spider-Man,DVD,1-week,4,1.80,Action
+I078-2002,Spider-Man,DVD,1-week,4,1.8,Action
 I079-1996,Crash Bandicoot,Game,2-day,3,6.99
-I080-2018,Avengers: Infinity War,DVD,1-week,2,2.50,Action
-I081-1994,Pulp Fiction,Record,1-week,2,1.00,Drama
+I080-2018,Avengers: Infinity War,DVD,1-week,2,2.5,Action
+I081-1994,Pulp Fiction,Record,1-week,2,1.0,Drama
 I082-2019,Control,Game,2-day,2,8.99
-I083-2004,The Incredibles,DVD,1-week,4,1.90,Comedy
+I083-2004,The Incredibles,DVD,1-week,4,1.9,Comedy
 I084-2015,Fallout 4,Game,1-week,1,7.99
-I085-2000,Cast Away,Record,2-day,3,1.20,Drama
+I085-2000,Cast Away,Record,2-day,3,1.2,Drama
 I086-2016,Captain America: Civil War,DVD,1-week,2,2.25,Action
 I087-2007,Mass Effect,Game,2-day,3,6.99
-I088-1999,The Matrix,Record,1-week,1,1.10,Sci-Fi
+I088-1999,The Matrix,Record,1-week,1,1.1,Sci-Fi
 I089-2010,Assassin's Creed: Brotherhood,Game,1-week,2,7.99
-I090-2014,Guardians of the Galaxy,DVD,2-day,3,2.00,Action
-I091-2005,Batman Begins,Record,1-week,2,1.20,Action
+I090-2014,Guardians of the Galaxy,DVD,2-day,3,2.0,Action
+I091-2005,Batman Begins,Record,1-week,2,1.2,Action
 I092-2011,Batman: Arkham City,Game,2-day,3,7.99
-I093-2009,Up,DVD,1-week,4,1.80,Comedy
+I093-2009,Up,DVD,1-week,4,1.8,Comedy
 I094-1998,Metal Gear Solid,Game,1-week,2,6.99
-I095-2012,Skyfall,Record,2-day,1,1.30,Action
+I095-2012,Skyfall,Record,2-day,1,1.3,Action
 I096-2018,God of War,Game,2-day,2,9.99
-I097-2000,American Psycho,DVD,1-week,3,2.00,Horror
+I097-2000,American Psycho,DVD,1-week,3,2.0,Horror
 I098-2001,Grand Theft Auto III,Game,1-week,2,6.99
-I099-2003,Finding Nemo,Record,1-week,4,1.10,Comedy
+I099-2003,Finding Nemo,Record,1-week,4,1.1,Comedy
 I100-2007,Call of Duty 4: Modern Warfare,Game,2-day,3,7.99
-I101-2004,The Incredibles,DVD,1-week,2,1.90,Comedy
+I101-2004,The Incredibles,DVD,1-week,2,1.9,Comedy
 I102-2013,The Last of Us,Game,1-week,1,9.99
-I103-1985,Back to the Future,Record,2-day,3,1.20,Sci-Fi
+I103-1985,Back to the Future,Record,2-day,3,1.2,Sci-Fi
 I104-2009,Uncharted 2: Among Thieves,Game,2-day,2,7.99
-I105-1994,The Lion King,DVD,1-week,3,1.80,Animation
+I105-1994,The Lion King,DVD,1-week,3,1.8,Animation
 I106-2015,Witcher 3: Wild Hunt,Game,1-week,2,9.99
-I107-1980,Star Wars: The Empire Strikes Back,Record,2-day,1,1.10,Sci-Fi
+I107-1980,Star Wars: The Empire Strikes Back,Record,2-day,1,1.1,Sci-Fi
 I108-2008,Grand Theft Auto IV,Game,1-week,3,6.99
 I109-1999,Toy Story 2,DVD,1-week,2,1.75,Comedy
 I110-2010,Red Dead Redemption,Game,2-day,2,7.99
-I111-2007,No Country for Old Men,Record,1-week,3,1.20,Drama
+I111-2007,No Country for Old Men,Record,1-week,3,1.2,Drama
 I112-2013,BioShock Infinite,Game,2-day,2,9.99
-I113-2008,Wall-E,DVD,1-week,4,1.90,Animation
+I113-2008,Wall-E,DVD,1-week,4,1.9,Animation
 I114-2011,Dark Souls,Game,1-week,3,8.99
-I115-2010,Inception,Record,2-day,2,1.40,Action
+I115-2010,Inception,Record,2-day,2,1.4,Action
 I116-2015,Metal Gear Solid V: The Phantom Pain,Game,2-day,2,9.99
-I117-1997,Titanic,DVD,1-week,3,2.00,Drama
+I117-1997,Titanic,DVD,1-week,3,2.0,Drama
 I118-2012,Dishonored,Game,1-week,1,7.99
-I119-2002,Lord of the Rings: The Two Towers,Record,1-week,2,1.20,Action
+I119-2002,Lord of the Rings: The Two Towers,Record,1-week,2,1.2,Action
 I120-2006,The Elder Scrolls IV: Oblivion,Game,2-day,3,6.99
-I121-1993,Schindler's List,DVD,1-week,4,1.90,Drama
+I121-1993,Schindler's List,DVD,1-week,4,1.9,Drama
 I122-2004,World of Warcraft,Game,1-week,1,8.99
-I123-1988,Die Hard,Record,2-day,2,1.20,Action
+I123-1988,Die Hard,Record,2-day,2,1.2,Action
 I124-2007,Super Mario Galaxy,Game,1-week,3,7.99
-I125-1995,Toy Story,DVD,1-week,3,1.80,Comedy
+I125-1995,Toy Story,DVD,1-week,3,1.8,Comedy
 I126-2018,Red Dead Redemption 2,Game,2-day,2,9.99
-I127-1990,Goodfellas,Record,1-week,1,1.10,Drama
+I127-1990,Goodfellas,Record,1-week,1,1.1,Drama
 I128-2009,Assassin's Creed II,Game,2-day,3,6.99
 I129-2001,Shrek,DVD,1-week,2,1.75,Comedy
 I130-2011,Portal 2,Game,2-day,2,7.99
-I131-2000,Memento,Record,1-week,3,1.20,Drama
+I131-2000,Memento,Record,1-week,3,1.2,Drama
 I132-2010,Mass Effect 2,Game,2-day,2,9.99
-I133-2005,Brokeback Mountain,DVD,1-week,4,1.90,Drama
+I133-2005,Brokeback Mountain,DVD,1-week,4,1.9,Drama
 I134-2008,Fallout 3,Game,1-week,3,8.99
-I135-2012,Django Unchained,Record,2-day,2,1.40,Action
+I135-2012,Django Unchained,Record,2-day,2,1.4,Action
 I136-2016,Overwatch,Game,2-day,2,9.99
-I137-1988,A Fish Called Wanda,DVD,1-week,3,2.00,Comedy
+I137-1988,A Fish Called Wanda,DVD,1-week,3,2.0,Comedy
 I138-2002,Metroid Prime,Game,1-week,1,7.99
-I139-2001,The Royal Tenenbaums,Record,1-week,2,1.20,Comedy
+I139-2001,The Royal Tenenbaums,Record,1-week,2,1.2,Comedy
 I140-2007,Bioshock,Game,2-day,3,6.99
-I141-2003,Finding Nemo,DVD,1-week,4,1.90,Animation
+I141-2003,Finding Nemo,DVD,1-week,4,1.9,Animation
 I142-2005,Resident Evil 4,Game,1-week,1,8.99
-I143-1996,Fargo,Record,2-day,2,1.20,Drama
+I143-1996,Fargo,Record,2-day,2,1.2,Drama
 I144-2015,Witcher 3,Game,1-week,3,7.99
-I145-1998,The Big Lebowski,DVD,1-week,3,1.80,Comedy
+I145-1998,The Big Lebowski,DVD,1-week,3,1.8,Comedy
 I146-2017,Hollow Knight,Game,2-day,2,9.99
-I147-1999,The Matrix,Record,1-week,1,1.10,Sci-Fi
+I147-1999,The Matrix,Record,1-week,1,1.1,Sci-Fi
 I148-2006,Gears of War,Game,1-week,3,6.99
 I149-2001,Monsters Inc.,DVD,1-week,2,1.75,Comedy
 I150-2013,Grand Theft Auto V,Game,2-day,2,7.99
@@ -152,49 +152,49 @@ I151-1997,The Lost World: Jurassic Park,Record,2-day,3,1.25,Action
 I152-2014,Dragon Age: Inquisition,Game,1-week,1,9.99
 I153-2008,Kung Fu Panda,DVD,2-day,4,1.85,Animation
 I154-2011,The Elder Scrolls V: Skyrim,Game,1-week,2,7.99
-I155-1992,A Few Good Men,Record,1-week,2,1.00,Drama
+I155-1992,A Few Good Men,Record,1-week,2,1.0,Drama
 I156-2009,Uncharted 2: Among Thieves,Game,2-day,3,6.99
-I157-1994,The Lion King,DVD,1-week,3,1.80,Animation
+I157-1994,The Lion King,DVD,1-week,3,1.8,Animation
 I158-2015,Witcher 3: Wild Hunt,Game,1-week,2,9.99
-I159-1980,Star Wars: The Empire Strikes Back,Record,2-day,1,1.10,Sci-Fi
+I159-1980,Star Wars: The Empire Strikes Back,Record,2-day,1,1.1,Sci-Fi
 I160-2008,Grand Theft Auto IV,Game,1-week,3,6.99
 I161-1999,Toy Story 2,DVD,1-week,2,1.75,Comedy
 I162-2010,Red Dead Redemption,Game,2-day,2,7.99
-I163-2007,No Country for Old Men,Record,1-week,3,1.20,Drama
+I163-2007,No Country for Old Men,Record,1-week,3,1.2,Drama
 I164-2013,BioShock Infinite,Game,2-day,2,9.99
-I165-2008,Wall-E,DVD,1-week,4,1.90,Animation
+I165-2008,Wall-E,DVD,1-week,4,1.9,Animation
 I166-2011,Dark Souls,Game,1-week,3,8.99
-I167-2010,Inception,Record,2-day,2,1.40,Action
+I167-2010,Inception,Record,2-day,2,1.4,Action
 I168-2015,Metal Gear Solid V: The Phantom Pain,Game,2-day,2,9.99
-I169-1997,Titanic,DVD,1-week,3,2.00,Drama
+I169-1997,Titanic,DVD,1-week,3,2.0,Drama
 I170-2012,Dishonored,Game,1-week,1,7.99
-I171-2002,Lord of the Rings: The Two Towers,Record,1-week,2,1.20,Action
+I171-2002,Lord of the Rings: The Two Towers,Record,1-week,2,1.2,Action
 I172-2006,The Elder Scrolls IV: Oblivion,Game,2-day,3,6.99
-I173-1993,Schindler's List,DVD,1-week,4,1.90,Drama
+I173-1993,Schindler's List,DVD,1-week,4,1.9,Drama
 I174-2004,World of Warcraft,Game,1-week,1,8.99
-I175-1988,Die Hard,Record,2-day,2,1.20,Action
+I175-1988,Die Hard,Record,2-day,2,1.2,Action
 I176-2007,Super Mario Galaxy,Game,1-week,3,7.99
-I177-1995,Toy Story,DVD,1-week,3,1.80,Comedy
+I177-1995,Toy Story,DVD,1-week,3,1.8,Comedy
 I178-2018,Red Dead Redemption 2,Game,2-day,2,9.99
-I179-1990,Goodfellas,Record,1-week,1,1.10,Drama
+I179-1990,Goodfellas,Record,1-week,1,1.1,Drama
 I180-2009,Assassin's Creed II,Game,2-day,3,6.99
 I181-2001,Shrek,DVD,1-week,2,1.75,Comedy
 I182-2011,Portal 2,Game,2-day,2,7.99
-I183-2000,Memento,Record,1-week,3,1.20,Drama
+I183-2000,Memento,Record,1-week,3,1.2,Drama
 I184-2010,Mass Effect 2,Game,2-day,2,9.99
-I185-2005,Brokeback Mountain,DVD,1-week,4,1.90,Drama
+I185-2005,Brokeback Mountain,DVD,1-week,4,1.9,Drama
 I186-2008,Fallout 3,Game,1-week,3,8.99
-I187-2012,Django Unchained,Record,2-day,2,1.40,Action
+I187-2012,Django Unchained,Record,2-day,2,1.4,Action
 I188-2016,Overwatch,Game,2-day,2,9.99
-I189-1988,A Fish Called Wanda,DVD,1-week,3,2.00,Comedy
+I189-1988,A Fish Called Wanda,DVD,1-week,3,2.0,Comedy
 I190-2002,Metroid Prime,Game,1-week,1,7.99
-I191-2001,The Royal Tenenbaums,Record,1-week,2,1.20,Comedy
+I191-2001,The Royal Tenenbaums,Record,1-week,2,1.2,Comedy
 I192-2007,Bioshock,Game,2-day,3,6.99
-I193-2003,Finding Nemo,DVD,1-week,4,1.90,Animation
+I193-2003,Finding Nemo,DVD,1-week,4,1.9,Animation
 I194-2005,Resident Evil 4,Game,1-week,1,8.99
-I195-1996,Fargo,Record,2-day,2,1.20,Drama
+I195-1996,Fargo,Record,2-day,2,1.2,Drama
 I196-2015,Witcher 3,Game,1-week,3,7.99
-I197-1998,The Big Lebowski,DVD,1-week,3,1.80,Comedy
+I197-1998,The Big Lebowski,DVD,1-week,3,1.8,Comedy
 I198-2017,Hollow Knight,Game,2-day,2,9.99
-I199-1999,The Matrix,Record,1-week,1,1.10,Sci-Fi
+I199-1999,The Matrix,Record,1-week,1,1.1,Sci-Fi
 I200-2006,Gears of War,Game,1-week,3,6.99
