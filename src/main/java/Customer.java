@@ -83,11 +83,10 @@ public class Customer {
 
     public void rentItem(String itemId) {
         rentedItems.add(itemId);
-        numberOfRentals++;
     }
 
     public void returnItem(String itemId) {
         rentedItems.remove(itemId);
-        numberOfRentals--;
+        numberOfRentals++;
     }
 }
