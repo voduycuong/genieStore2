@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #171717;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.LoginController">
-    <center>
+   <top>
         <AnchorPane prefHeight="400.0" prefWidth="335.0" BorderPane.alignment="CENTER">
             <children>
             <VBox layoutX="181.0" layoutY="153.0" prefHeight="140.0" prefWidth="231.0" spacing="10.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="180.0">
@@ -56,7 +56,7 @@
             </HBox>
             <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="235.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="240.0" AnchorPane.rightAnchor="240.0">
                <image>
-                  <Image url="@logo-square.png" />
+                  <Image url="@../img/logo-square.png" />
                </image>
                <rotationAxis>
                   <Point3D />
@@ -64,5 +64,5 @@
             </ImageView>
             </children>
         </AnchorPane>
-    </center>
+   </top>
 </BorderPane>

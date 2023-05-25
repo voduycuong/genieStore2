@@ -14,7 +14,7 @@ I013-2005,Brokeback Mountain,DVD,1-week,3,1.5,Drama
 I014-2008,Grand Theft Auto IV,Game,1-week,3,6.99
 I015-1984,Ghostbusters,Record,2-day,2,1.25,Comedy
 I016-2009,Zombieland,DVD,2-day,1,2.25,Comedy
-I017-2012,The Dark Knight Rises,DVD,1-week,0,1.75,Action
+I017-2012,The Dark Knight Rises,DVD,1-week,4,1.75,Action
 I018-2007,BioShock,Game,2-day,5,7.99
 I019-1975,Jaws,Record,1-week,2,0.85,Horror
 I020-2001,The Lord of the Rings: The Fellowship of the Ring,DVD,2-day,3,2.5,Drama
