@@ -17,6 +17,8 @@ public class LoginApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
+        primaryStage.initStyle(StageStyle.TRANSPARENT);
+
         // Calculate the screen center coordinates
         Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
         double centerX = screenBounds.getMinX() + (screenBounds.getWidth() / 2);
@@ -30,18 +32,24 @@ public class LoginApplication extends Application {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/database/SplashScreen.fxml"));
         Parent root = loader.load();
-        splashStage.setScene(new Scene(root));
+
+        Scene scene = new Scene(root);
+        splashStage.setScene(scene);
         splashStage.setTitle("Splash Screen");
         splashStage.show();
 
-        // Delay for 3 seconds (3000 milliseconds) before transitioning to the login page
-        PauseTransition delay = new PauseTransition(Duration.millis(1000));
+        // Access the SplashScreenController instance
+        SplashScreenController splashController = loader.getController();
+        splashController.setPrimaryStage(primaryStage);
+
+        PauseTransition delay = new PauseTransition(Duration.millis(5000));
         delay.setOnFinished(event -> {
             splashStage.close();
             showLoginPage(primaryStage);
         });
         delay.play();
     }
+
 
     private void showLoginPage(Stage primaryStage) {
         try {

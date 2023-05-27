@@ -1,39 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="496.0" prefWidth="752.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
-   <Label layoutX="251.0" layoutY="388.0" prefHeight="52.0" prefWidth="250.0" text="GENIE STORE" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="251.0">
-      <font>
-         <Font name="Segoe UI" size="42.0" />
-      </font>
-      <textFill>
-         <LinearGradient endX="1.0" endY="1.0">
-            <stops>
-               <Stop>
-                  <color>
-                     <Color red="1.0" green="1.0" blue="1.0" />
-                  </color>
-               </Stop>
-               <Stop offset="1.0">
-                  <color>
-                     <Color red="1.0" green="1.0" blue="1.0" />
-                  </color>
-               </Stop>
-            </stops>
-         </LinearGradient>
-      </textFill>
-   </Label>
-    <ImageView fitHeight="239.0" fitWidth="250.0" layoutX="251.0" layoutY="88.0" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="251.0">
-        <image>
-            <Image url="@../img/logo-square.png" />
-        </image>
-    </ImageView>
+<AnchorPane fx:id="splashPane" prefHeight="496.0" prefWidth="752.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.SplashScreenController">
+   <ProgressBar fx:id="loadingBar" layoutX="251.0" layoutY="388.0" prefWidth="250.0" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="251.0" />
+   <ImageView fitHeight="239.0" fitWidth="250.0" layoutX="251.0" layoutY="88.0" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="251.0">
+      <image>
+         <Image url="@../img/logo-square.png" />
+      </image>
+   </ImageView>
+   <Label fx:id="loadingLabel" layoutX="251.0" layoutY="430.0" prefWidth="250.0" text="Loading..." textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="251.0" />
 </AnchorPane>
