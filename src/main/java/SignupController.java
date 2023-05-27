@@ -42,6 +42,15 @@ public class SignupController {
     }
 
     @FXML
+    public void initialize() {
+        nameField.setOnAction(event -> signUp());
+        phoneField.setOnAction(event -> signUp());
+        addressField.setOnAction(event -> signUp());
+        usernameField.setOnAction(event -> signUp());
+        passwordField.setOnAction(event -> signUp());
+    }
+
+    @FXML
     public void signUp() {
         String name = nameField.getText();
         String address = addressField.getText();

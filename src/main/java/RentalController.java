@@ -164,16 +164,8 @@ public class RentalController {
     }
 
     private Customer getCustomerById(String customerId) {
-        String id;
-        try {
-            id = String.valueOf(Integer.parseInt(customerId));
-        } catch (NumberFormatException e) {
-            // Handle invalid customer ID format
-            return null;
-        }
-
         for (Customer customer : customers) {
-            if (customer.getCustomerId() == id) {
+            if (customer.getCustomerId().equals(customerId)) {
                 return customer;
             }
         }
@@ -251,7 +243,7 @@ public class RentalController {
                         customers.add(currentCustomer);
                     }
 
-                    int id = Integer.parseInt(data[0]);
+                    String id = data[0];
                     String name = data[1];
                     String address = data[2];
                     String phone = data[3];

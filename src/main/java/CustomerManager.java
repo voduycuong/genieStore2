@@ -58,16 +58,16 @@ public class CustomerManager {
 
     public Customer searchCustomerByNameOrId(String query) {
         for (Customer customer : customers) {
-            if (customer.getName().equalsIgnoreCase(query) || String.valueOf(customer.getCustomerId()).equals(query)) {
+            if (customer.getName().equalsIgnoreCase(query) || customer.getCustomerId().equals(query)) {
                 return customer;
             }
         }
         return null;
     }
 
-    private int findCustomerIndex(int customerId) {
+    private int findCustomerIndex(String customerId) {
         for (int i = 0; i < customers.size(); i++) {
-            if (customers.get(i).getCustomerId() == customerId) {
+            if (customers.get(i).getCustomerId().equals(customerId)) {
                 return i;
             }
         }

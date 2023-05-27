@@ -34,6 +34,12 @@ public class LoginController {
     }
 
     @FXML
+    public void initialize() {
+        usernameField.setOnAction(event -> login());
+        passwordField.setOnAction(event -> login());
+    }
+
+    @FXML
     public void login() {
         String username = usernameField.getText();
         String password = passwordField.getText();

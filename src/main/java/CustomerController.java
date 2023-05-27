@@ -11,8 +11,6 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 
-
-
 public class CustomerController {
     @FXML
     private TextField nameField;
@@ -61,13 +59,7 @@ public class CustomerController {
             return;
         }
 
-        int customerId;
-        try {
-            customerId = Integer.parseInt(idText);
-        } catch (NumberFormatException e) {
-            showErrorAlert("ID must be a number.");
-            return;
-        }
+        String customerId = idText;
 
         Customer customer;
         if (guestRadio.isSelected()) {
@@ -92,15 +84,9 @@ public class CustomerController {
             return;
         }
 
-        int id;
-        try {
-            id = Integer.parseInt(idText);
-        } catch (NumberFormatException e) {
-            showErrorAlert("ID must be a number.");
-            return;
-        }
+        String customerId = idText;
 
-        Customer existingCustomer = customerManager.searchCustomerByNameOrId(idText);
+        Customer existingCustomer = customerManager.searchCustomerByNameOrId(customerId);
         if (existingCustomer == null) {
             showErrorAlert("Customer not found.");
             return;
@@ -140,15 +126,9 @@ public class CustomerController {
             return;
         }
 
-        int id;
-        try {
-            id = Integer.parseInt(idText);
-        } catch (NumberFormatException e) {
-            showErrorAlert("ID must be a number.");
-            return;
-        }
+        String customerId = idText;
 
-        Customer customer = customerManager.searchCustomerByNameOrId(idText);
+        Customer customer = customerManager.searchCustomerByNameOrId(customerId);
         if (customer == null) {
             showErrorAlert("Customer not found.");
             return;

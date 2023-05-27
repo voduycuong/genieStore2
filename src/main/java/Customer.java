@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 public class Customer {
     private String name;
-    private int customerId;
+    private String customerId;
     private String phone;
     private String address;
 
@@ -16,7 +16,7 @@ public class Customer {
     private List<String> rentedItems;
 
 
-    public Customer(String name, int customerId, String phone, String address, int numberOfRentals, String customerType, String username, String password) {
+    public Customer(String name, String customerId, String phone, String address, int numberOfRentals, String customerType, String username, String password) {
         this.name = name;
         this.customerId = customerId;
         this.phone = phone;
@@ -33,7 +33,7 @@ public class Customer {
         return name;
     }
 
-    public int getCustomerId() {
+    public String getCustomerId() {
         return customerId;
     }
 
