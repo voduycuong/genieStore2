@@ -2,25 +2,25 @@ package main.java;
 
 import java.util.ArrayList;
 import java.util.List;
-
 public class Customer {
-    private String customerId;
     private String name;
-    private String address;
+    private int customerId;
     private String phone;
+    private String address;
+
     private int numberOfRentals;
     private String customerType;
     private String username;
     private String password;
     private int rewardPoints;
-
     private List<String> rentedItems;
 
-    public Customer(String customerId, String name, String address, String phone, int numberOfRentals, String customerType, String username, String password) {
-        this.customerId = customerId;
+
+    public Customer(String name, int customerId, String phone, String address, int numberOfRentals, String customerType, String username, String password) {
         this.name = name;
-        this.address = address;
+        this.customerId = customerId;
         this.phone = phone;
+        this.address = address;
         this.numberOfRentals = numberOfRentals;
         this.customerType = customerType;
         this.username = username;
@@ -29,20 +29,20 @@ public class Customer {
         this.rentedItems = new ArrayList<>();
     }
 
-    public String getCustomerId() {
-        return customerId;
-    }
-
     public String getName() {
         return name;
     }
 
-    public String getAddress() {
-        return address;
+    public int getCustomerId() {
+        return customerId;
     }
 
     public String getPhone() {
         return phone;
+    }
+
+    public String getAddress() {
+        return address;
     }
 
     public int getNumberOfRentals() {
@@ -88,5 +88,11 @@ public class Customer {
     public void returnItem(String itemId) {
         rentedItems.remove(itemId);
         numberOfRentals++;
+    }
+
+    // Override toString() method to display customer information
+    @Override
+    public String toString() {
+        return "Name: " + name + "\nID: " + customerId + "\nPhone: " + phone + "\nAddress: " + address;
     }
 }
