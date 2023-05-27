@@ -164,13 +164,22 @@ public class RentalController {
     }
 
     private Customer getCustomerById(String customerId) {
+        int id;
+        try {
+            id = Integer.parseInt(customerId);
+        } catch (NumberFormatException e) {
+            // Handle invalid customer ID format
+            return null;
+        }
+
         for (Customer customer : customers) {
-            if (customer.getCustomerId().equals(customerId)) {
+            if (customer.getCustomerId() == id) {
                 return customer;
             }
         }
         return null;
     }
+
 
     private void loadItems() {
         try (BufferedReader reader = new BufferedReader(new FileReader("src/resources/database/items.txt"))) {
@@ -207,15 +216,16 @@ public class RentalController {
 
                     Item item;
                     if (rentType.equalsIgnoreCase("Game")) {
-                        item = new Game(id, title, loanType, numberOfCopies, rentalFee);
+                        item = new Game("Game", false, id, title, rentType, loanType, numberOfCopies, rentalFee, genre);
                     } else if (rentType.equalsIgnoreCase("Record")) {
-                        item = new Record(id, title, loanType, numberOfCopies, rentalFee, genre);
+                        item = new Record("Record", false, id, title, rentType, loanType, numberOfCopies, rentalFee, genre);
                     } else if (rentType.equalsIgnoreCase("DVD")) {
-                        item = new DVD(id, title, loanType, numberOfCopies, rentalFee, genre);
+                        item = new DVD("DVD", false, id, title, rentType, loanType, numberOfCopies, rentalFee, genre);
                     } else {
                         System.out.println("Invalid item data: " + line);
                         continue;
                     }
+
 
                     items.add(item);
                 } else {
@@ -259,7 +269,7 @@ public class RentalController {
                     String password = data[7];
 
                     // Create a new customer object
-                    currentCustomer = new Customer(id, name, address, phone, numberOfRentals, customerType, username, password);
+                    currentCustomer = new Customer(name, customerId, phone, address, numberOfRentals, customerType, username, password);
 
                     // Process the rented items
                     for (int i = 8; i < data.length; i++) {

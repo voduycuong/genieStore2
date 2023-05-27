@@ -1,6 +1,8 @@
 package main.java;
 
 public class Item {
+    private String name;
+    private boolean isTwoDayItem;
     private String itemId;
     private String title;
     private String rentType;
@@ -9,7 +11,9 @@ public class Item {
     private double rentalFee;
     private String genre;
 
-    public Item(String itemId, String title, String rentType, String loanType, int numberOfCopies, double rentalFee, String genre) {
+    public Item(String name, boolean isTwoDayItem, String itemId, String title, String rentType, String loanType, int numberOfCopies, double rentalFee, String genre) {
+        this.name = name;
+        this.isTwoDayItem = isTwoDayItem;
         this.itemId = itemId;
         this.title = title;
         this.rentType = rentType;
@@ -17,6 +21,14 @@ public class Item {
         this.numberOfCopies = numberOfCopies;
         this.rentalFee = rentalFee;
         this.genre = genre;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public boolean isTwoDayItem() {
+        return isTwoDayItem;
     }
 
     public String getItemId() {
