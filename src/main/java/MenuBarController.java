@@ -5,6 +5,8 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 
+import java.awt.event.ActionEvent;
+
 public class MenuBarController {
 
     @FXML
@@ -59,8 +61,8 @@ public class MenuBarController {
     }
 
     @FXML
-    private void handleCreateCustomersMenuItem() {
-        System.out.println("Create Customers menu item clicked");
+    private void handleCreateCustomersMenuItem(ActionEvent event) {
+        MenuBarApplication.loadWindow(getClass().getResource("/resources/database/customer.fxml"), "Customer Info", null);
     }
 
     @FXML
@@ -97,5 +99,4 @@ public class MenuBarController {
     private void handleAboutMenuItem() {
         System.out.println("About menu item clicked");
     }
-
 }

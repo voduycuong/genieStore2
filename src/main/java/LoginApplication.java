@@ -13,7 +13,7 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 
-public class LoginandSignupApplication extends Application {
+public class LoginApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -35,7 +35,7 @@ public class LoginandSignupApplication extends Application {
         splashStage.show();
 
         // Delay for 3 seconds (3000 milliseconds) before transitioning to the login page
-        PauseTransition delay = new PauseTransition(Duration.millis(3000));
+        PauseTransition delay = new PauseTransition(Duration.millis(1000));
         delay.setOnFinished(event -> {
             splashStage.close();
             showLoginPage(primaryStage);

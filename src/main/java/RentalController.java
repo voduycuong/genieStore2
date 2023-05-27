@@ -164,9 +164,9 @@ public class RentalController {
     }
 
     private Customer getCustomerById(String customerId) {
-        int id;
+        String id;
         try {
-            id = Integer.parseInt(customerId);
+            id = String.valueOf(Integer.parseInt(customerId));
         } catch (NumberFormatException e) {
             // Handle invalid customer ID format
             return null;
@@ -251,7 +251,7 @@ public class RentalController {
                         customers.add(currentCustomer);
                     }
 
-                    String id = data[0];
+                    int id = Integer.parseInt(data[0]);
                     String name = data[1];
                     String address = data[2];
                     String phone = data[3];
@@ -269,7 +269,7 @@ public class RentalController {
                     String password = data[7];
 
                     // Create a new customer object
-                    currentCustomer = new Customer(name, customerId, phone, address, numberOfRentals, customerType, username, password);
+                    currentCustomer = new Customer(name, id, phone, address, numberOfRentals, customerType, username, password);
 
                     // Process the rented items
                     for (int i = 8; i < data.length; i++) {

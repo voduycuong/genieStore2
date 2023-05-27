@@ -9,57 +9,103 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.CustomerController">
+<GridPane alignment="center" hgap="10" prefHeight="320.0" prefWidth="461.0" vgap="10" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.CustomerController">
     <padding>
         <Insets bottom="20" left="20" right="20" top="20" />
     </padding>
 
-    <Label text="Name:" />
-    <TextField fx:id="nameField" GridPane.columnIndex="1" />
+    <Label text="Name:" GridPane.rowIndex="1">
+      <font>
+         <Font size="14.0" />
+      </font></Label>
+    <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-    <Label text="ID:" GridPane.rowIndex="1" />
-    <TextField fx:id="idField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    <Label text="ID:" GridPane.rowIndex="2">
+      <font>
+         <Font size="14.0" />
+      </font></Label>
+    <TextField fx:id="idField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
-    <Label text="Phone:" GridPane.rowIndex="2" />
-    <TextField fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    <Label text="Phone:" GridPane.rowIndex="3">
+      <font>
+         <Font size="14.0" />
+      </font></Label>
+    <TextField fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
-    <Label text="Address:" GridPane.rowIndex="3" />
-    <TextField fx:id="addressField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+    <Label text="Address:" GridPane.rowIndex="4">
+      <font>
+         <Font size="14.0" />
+      </font></Label>
+    <TextField fx:id="addressField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
 
-    <Label text="Level:" GridPane.rowIndex="4" />
-    <HBox prefHeight="17.0" prefWidth="176.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
-        <RadioButton fx:id="guestRadio" text="Guest" />
+    <Label text="Level:" GridPane.rowIndex="5">
+      <font>
+         <Font size="14.0" />
+      </font></Label>
+    <HBox prefHeight="17.0" prefWidth="176.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+        <RadioButton fx:id="guestRadio" text="Guest">
+         <font>
+            <Font size="14.0" />
+         </font></RadioButton>
         <RadioButton fx:id="regularRadio" text="Regular">
          <padding>
             <Insets left="10.0" />
-         </padding></RadioButton>
+         </padding>
+         <font>
+            <Font size="14.0" />
+         </font></RadioButton>
         <RadioButton fx:id="vipRadio" text="VIP">
          <padding>
             <Insets left="10.0" />
-         </padding></RadioButton>
+         </padding>
+         <font>
+            <Font size="14.0" />
+         </font></RadioButton>
     </HBox>
 
-    <Button onAction="#handleAddButton" prefHeight="25.0" prefWidth="79.0" text="Add" GridPane.columnIndex="1" GridPane.rowIndex="5">
+    <Button onAction="#handleAddButton" prefHeight="25.0" prefWidth="79.0" text="Add" GridPane.columnIndex="1" GridPane.rowIndex="6">
       <GridPane.margin>
-         <Insets />
-      </GridPane.margin></Button>
-    <Button onAction="#handleUpdateButton" prefHeight="25.0" prefWidth="81.0" text="Update" GridPane.columnIndex="1" GridPane.rowIndex="5">
+         <Insets left="10.0" />
+      </GridPane.margin>
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font></Button>
+    <Button onAction="#handleUpdateButton" prefHeight="25.0" prefWidth="81.0" text="Update" GridPane.columnIndex="1" GridPane.rowIndex="6">
       <GridPane.margin>
-         <Insets left="95.0" />
-      </GridPane.margin></Button>
-    <Button onAction="#handlePromoteButton" prefHeight="25.0" prefWidth="82.0" text="Promote" GridPane.columnIndex="1" GridPane.rowIndex="6">
+         <Insets left="125.0" />
+      </GridPane.margin>
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font></Button>
+    <Button onAction="#handlePromoteButton" prefHeight="25.0" prefWidth="82.0" text="Promote" GridPane.columnIndex="1" GridPane.rowIndex="7">
       <GridPane.margin>
-         <Insets left="95.0" />
+         <Insets left="125.0" />
+      </GridPane.margin>
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font></Button>
+    <Button onAction="#handleDisplayButton" prefHeight="25.0" prefWidth="79.0" text="Display" GridPane.columnIndex="1" GridPane.rowIndex="7">
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font>
+      <GridPane.margin>
+         <Insets left="10.0" />
       </GridPane.margin></Button>
-    <Button onAction="#handleDisplayButton" prefHeight="25.0" prefWidth="79.0" text="Display" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-    <Button onAction="#handleSearchButton" prefHeight="25.0" prefWidth="62.0" text="Search" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+    <Button onAction="#handleSearchButton" prefHeight="25.0" prefWidth="62.0" text="Search" GridPane.columnIndex="2" GridPane.rowIndex="10">
+      <font>
+         <Font size="14.0" />
+      </font></Button>
 
-    <Label text="Search by Name/ID:" GridPane.rowIndex="7" />
-    <TextField fx:id="searchField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+    <Label text="Search by Name/ID:" GridPane.rowIndex="10">
+      <font>
+         <Font size="14.0" />
+      </font></Label>
+    <TextField fx:id="searchField" GridPane.columnIndex="1" GridPane.rowIndex="10" />
    <columnConstraints>
       <ColumnConstraints />
-      <ColumnConstraints />
+      <ColumnConstraints maxWidth="227.0" minWidth="182.0" prefWidth="214.0" />
       <ColumnConstraints />
    </columnConstraints>
    <rowConstraints>
@@ -70,6 +116,9 @@
       <RowConstraints />
       <RowConstraints />
       <RowConstraints />
+      <RowConstraints />
+      <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+      <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
       <RowConstraints />
    </rowConstraints>
 </GridPane>
