@@ -10,7 +10,7 @@ public class CustomerApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/resources/database/customer.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/resources/database/CustomerProfile.fxml"));
         primaryStage.setTitle("Customer Management");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();

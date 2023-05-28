@@ -36,7 +36,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button defaultButton="true" layoutX="554.0" layoutY="418.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="84.0" text="Rent">
+      <Button defaultButton="true" layoutX="554.0" layoutY="418.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="84.0" text="Return">
          <font>
             <Font size="16.0" />
          </font>

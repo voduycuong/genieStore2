@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="800.0" prefWidth="910.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.ItemDisplayController">
     <children>
@@ -17,5 +19,10 @@
                 <TableColumn fx:id="genreCol" prefWidth="96.0" text="Genre" />
             </columns>
         </TableView>
+      <Label layoutX="360.0" layoutY="21.0" prefHeight="66.0" prefWidth="191.0" text="Items List">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

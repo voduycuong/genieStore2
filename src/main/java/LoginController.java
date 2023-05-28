@@ -60,7 +60,7 @@ public class LoginController {
 
                     MenuBarController menuBarController = loader.getController();
                     menuBarController.setStage(stage);
-                    stage.setTitle("Main");
+                    stage.setTitle("Dragon's Den");
 
                     Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
                     double centerX = screenBounds.getMinX() + (screenBounds.getWidth() / 2);

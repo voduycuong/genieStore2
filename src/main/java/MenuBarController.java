@@ -5,11 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -18,52 +14,42 @@ import java.io.IOException;
 
 public class MenuBarController {
 
-    @FXML
-    private MenuBar menuBar;
-
-    @FXML
-    private Menu fileMenu;
-
-    @FXML
-    private Menu customersMenu;
-
-    @FXML
-    private Menu itemsMenu;
-
-    @FXML
-    private Menu optionMenu;
-
-    @FXML
-    private Menu helpMenu;
-
-    @FXML
-    private MenuItem exitMenuItem;
-
-    @FXML
-    private MenuItem customerMenuItem;
-
-    @FXML
-    private MenuItem createItemMenuItem;
-
-    @FXML
-    private MenuItem editItemMenuItem;
-
-    @FXML
-    private MenuItem deleteItemMenuItem;
-
-    @FXML
-    private MenuItem appearanceMenuItem;
-
-    @FXML
-    private MenuItem aboutMenuItem;
-
-    @FXML
-    private AnchorPane contentPane;
-
     private Stage stage;
 
     public void setStage(Stage stage) {
         this.stage = stage;
+    }
+
+    @FXML
+    private void handleItemMenuItem() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/database/ItemDisplay.fxml"));
+            Parent root = loader.load();
+
+            Stage customerStage = new Stage();
+            customerStage.setScene(new Scene(root));
+            customerStage.setResizable(false);
+            customerStage.setTitle("Items List");
+            customerStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleCustomerMenuItem() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/database/CustomerDisplay.fxml"));
+            Parent root = loader.load();
+
+            Stage customerStage = new Stage();
+            customerStage.setScene(new Scene(root));
+            customerStage.setResizable(false);
+            customerStage.setTitle("Customers List");
+            customerStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -73,33 +59,11 @@ public class MenuBarController {
     }
 
     @FXML
-    private void handleCreateItemsMenuItem() {
-        System.out.println("Create Items menu item clicked");
+    private void handleSettingsMenuItem() {
     }
 
     @FXML
-    private void handleCustomerMenuItem() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/database/customer.fxml"));
-            Parent root = loader.load();
-
-            Stage customerStage = new Stage();
-            customerStage.setScene(new Scene(root));
-            customerStage.setTitle("Customer Info");
-            customerStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
-    private void handleEditItemsMenuItem() {
-        System.out.println("Edit Items menu item clicked");
-    }
-
-    @FXML
-    private void handleDeleteItemsMenuItem() {
-        System.out.println("Delete Items menu item clicked");
+    private void handleHowToUseMenuItem() {
     }
 
     @FXML
@@ -130,18 +94,18 @@ public class MenuBarController {
     }
 
     @FXML
-    private void handleDashboardMenuItem() {
-        loadView("dashboard.fxml");
+    private void handleDashboardButton() {
     }
 
     @FXML
-    private void handleRentMenuItem() {
+    private void handleRentButton() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/database/RentItem.fxml"));
             Parent root = loader.load();
 
             Stage customerStage = new Stage();
             customerStage.setScene(new Scene(root));
+            customerStage.setResizable(false);
             customerStage.setTitle("Rent Item");
             customerStage.show();
         } catch (IOException e) {
@@ -150,19 +114,32 @@ public class MenuBarController {
     }
 
     @FXML
-    private void handleReturnMenuItem() {
-        loadView("return.fxml");
+    private void handleReturnButton() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/database/ReturnItem.fxml"));
+            Parent root = loader.load();
+
+            Stage customerStage = new Stage();
+            customerStage.setScene(new Scene(root));
+            customerStage.setResizable(false);
+            customerStage.setTitle("Return Items");
+            customerStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
-    private void handleProfileMenuItem() {
-        loadView("profile.fxml");
-    }
-
-    private void loadView(String viewPath) {
+    private void handleProfileButton() {
         try {
-            Parent view = FXMLLoader.load(getClass().getResource(viewPath));
-            contentPane.getChildren().setAll(view);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/database/CustomerProfile.fxml"));
+            Parent root = loader.load();
+
+            Stage customerStage = new Stage();
+            customerStage.setScene(new Scene(root));
+            customerStage.setResizable(false);
+            customerStage.setTitle("Customer Profile");
+            customerStage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }

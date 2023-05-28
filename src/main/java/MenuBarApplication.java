@@ -16,10 +16,10 @@ public class MenuBarApplication extends Application {
         Parent root = loader.load();
 
         primaryStage.setScene(new Scene(root));
-        primaryStage.setTitle("Home");
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
-    
+
     public static void main(String[] args) {
         launch(args);
     }

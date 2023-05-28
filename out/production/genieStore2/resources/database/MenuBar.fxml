@@ -17,26 +17,19 @@
             <menus>
                 <Menu mnemonicParsing="false" text="File">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#handleExitMenuItem" text="Item" />
-                        <MenuItem mnemonicParsing="false" onAction="#handleExitMenuItem" text="Customer" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleItemMenuItem" text="Item" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleCustomerMenuItem" text="Customer" />
                         <MenuItem mnemonicParsing="false" onAction="#handleExitMenuItem" text="Exit" />
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Customers">
+                <Menu mnemonicParsing="false" text="Options">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#handleCustomerMenuItem" text="Edit" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Items">
-                    <items>
-                        <MenuItem mnemonicParsing="false" onAction="#handleCreateItemsMenuItem" text="Create" />
-                        <MenuItem mnemonicParsing="false" onAction="#handleEditItemsMenuItem" text="Edit" />
-                        <MenuItem mnemonicParsing="false" onAction="#handleDeleteItemsMenuItem" text="Delete" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleSettingsMenuItem" text="Settings" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#handleAboutMenuItem" text="How to use" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleHowToUseMenuItem" text="How to use" />
                         <MenuItem mnemonicParsing="false" onAction="#handleAboutMenuItem" text="About" />
                     </items>
                 </Menu>
@@ -44,36 +37,36 @@
         </MenuBar>
         <VBox layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="779.0" prefWidth="225.0" spacing="40.0" style="-fx-background-color: #4c4c4c;">
             <children>
-                <Button mnemonicParsing="false" onAction="#handleDashboardMenuItem" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #ffa906;" text="Dashboard">
+                <Button mnemonicParsing="false" onAction="#handleDashboardButton" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #ffa906;" text="Dashboard" textAlignment="CENTER">
                     <VBox.margin>
                         <Insets left="40.0" right="40.0" top="40.0" />
                     </VBox.margin>
                <font>
-                  <Font name="Gurmukhi MN" size="22.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#handleRentMenuItem" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #ffa906;" text="Rent">
+                <Button mnemonicParsing="false" onAction="#handleRentButton" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #ffa906;" text="Rent" textAlignment="CENTER">
                     <VBox.margin>
                         <Insets left="40.0" right="40.0" />
                     </VBox.margin>
                <font>
-                  <Font name="Gurmukhi MN" size="22.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #ffa906;" text="Return">
+                <Button mnemonicParsing="false" onAction="#handleReturnButton" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #ffa906;" text="Return" textAlignment="CENTER">
                     <VBox.margin>
                         <Insets left="40.0" right="40.0" />
                     </VBox.margin>
                <font>
-                  <Font name="Gurmukhi MN" size="22.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #ffa906;" text="Profile">
+                <Button mnemonicParsing="false" onAction="#handleProfileButton" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #ffa906;" text="Profile" textAlignment="CENTER">
                     <VBox.margin>
                         <Insets left="40.0" right="40.0" />
                     </VBox.margin>
                <font>
-                  <Font name="Gurmukhi MN" size="22.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
                 </Button>
             </children>
@@ -83,7 +76,7 @@
                 <fx:include source="dashboard.fxml" />
             </children>
         </HBox>
-      <Text fill="#ffe200" layoutX="400.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FEATURED ITEMS">
+      <Text fill="#ffe200" layoutX="424.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FEATURED ITEMS">
          <font>
             <Font name="Gurmukhi MN" size="50.0" />
          </font>
