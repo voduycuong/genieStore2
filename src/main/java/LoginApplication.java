@@ -17,8 +17,6 @@ public class LoginApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        primaryStage.initStyle(StageStyle.TRANSPARENT);
-
         // Calculate the screen center coordinates
         Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
         double centerX = screenBounds.getMinX() + (screenBounds.getWidth() / 2);
