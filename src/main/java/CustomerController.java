@@ -2,9 +2,14 @@ package main.java;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.List;
 
 public class CustomerController {
@@ -158,27 +163,22 @@ public class CustomerController {
         } else {
             showErrorAlert("This customer is already a VIP.");
         }
-
         clearFields();
     }
 
     @FXML
-    private void handleDisplayButton(ActionEvent event) {
-        String level = ((RadioButton) levelGroup.getSelectedToggle()).getText();
+    private void handleDisplayButton() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/database/CustomerDisplay.fxml"));
+            Parent root = loader.load();
 
-        List<Customer> customers = customerManager.getCustomersByLevel(level);
-
-        if (customers.isEmpty()) {
-            showErrorAlert("No customers found for the selected level.");
-            return;
+            Stage customerStage = new Stage();
+            customerStage.setScene(new Scene(root));
+            customerStage.setTitle("Customer Database");
+            customerStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
-        StringBuilder sb = new StringBuilder();
-        for (Customer customer : customers) {
-            sb.append(customer.toString()).append("\n\n");
-        }
-
-        showInfoAlert(sb.toString());
     }
 
     @FXML
