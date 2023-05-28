@@ -5,17 +5,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.ItemDisplayController">
-   <children>
-      <TableView fx:id="itemTableView" layoutX="14.0" layoutY="107.0" prefHeight="362.0" prefWidth="942.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0">
-        <columns>
-          <TableColumn fx:id="idCol" minWidth="1.0" prefWidth="1.0" text="ID" />
-          <TableColumn fx:id="titleCol" prefWidth="240.0" text="Title" />
-            <TableColumn fx:id="rentTypeCol" prefWidth="115.0" text="Rent type" />
-            <TableColumn fx:id="loanTypeCol" prefWidth="122.0" text="Loan type" />
-            <TableColumn fx:id="copiesCol" minWidth="0.0" prefWidth="117.0" text="Number of copies" />
-            <TableColumn fx:id="feesCol" prefWidth="117.0" text="Rental fees" />
-            <TableColumn fx:id="gerneCol" prefWidth="76.0" text="Gerne" />
-        </columns>
-      </TableView>
-   </children>
+    <children>
+        <TableView fx:id="itemTableView" layoutX="14.0" layoutY="107.0" prefHeight="362.0" prefWidth="942.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0">
+            <columns>
+                <TableColumn fx:id="idCol" minWidth="1.0" prefWidth="1.0" text="ID" />
+                <TableColumn fx:id="titleCol" prefWidth="240.0" text="Title" />
+                <TableColumn fx:id="rentTypeCol" prefWidth="115.0" text="Rent type" />
+                <TableColumn fx:id="loanTypeCol" prefWidth="122.0" text="Loan type" />
+                <TableColumn fx:id="copiesCol" minWidth="0.0" prefWidth="117.0" text="Number of copies" />
+                <TableColumn fx:id="feesCol" prefWidth="117.0" text="Rental fees" />
+                <TableColumn fx:id="genreCol" prefWidth="76.0" text="Genre" />
+            </columns>
+        </TableView>
+    </children>
 </AnchorPane>

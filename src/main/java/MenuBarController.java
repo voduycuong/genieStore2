@@ -9,6 +9,7 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -55,6 +56,9 @@ public class MenuBarController {
 
     @FXML
     private MenuItem aboutMenuItem;
+
+    @FXML
+    private AnchorPane contentPane;
 
     private Stage stage;
 
@@ -125,6 +129,35 @@ public class MenuBarController {
             aboutScreenRoot.addEventHandler(MouseEvent.MOUSE_CLICKED, (event) -> {
                 aboutStage.close();
             });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleDashboardMenuItem() {
+        loadView("dashboard.fxml");
+    }
+
+    @FXML
+    private void handleRentMenuItem() {
+        loadView("rent.fxml");
+    }
+
+    @FXML
+    private void handleReturnMenuItem() {
+        loadView("return.fxml");
+    }
+
+    @FXML
+    private void handleProfileMenuItem() {
+        loadView("profile.fxml");
+    }
+
+    private void loadView(String viewPath) {
+        try {
+            Parent view = FXMLLoader.load(getClass().getResource(viewPath));
+            contentPane.getChildren().setAll(view);
         } catch (IOException e) {
             e.printStackTrace();
         }
