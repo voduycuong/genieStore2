@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -15,6 +16,9 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.List;
 
 public class MenuBarController {
 
@@ -156,7 +160,17 @@ public class MenuBarController {
 
     @FXML
     private void handleProfileMenuItem() {
-        loadView("profile.fxml");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/database/profile.fxml"));
+            Parent root = loader.load();
+
+            Stage customerStage = new Stage();
+            customerStage.setScene(new Scene(root));
+            customerStage.setTitle("Customer Profile");
+            customerStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void loadView(String viewPath) {

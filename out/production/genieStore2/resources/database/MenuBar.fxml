@@ -68,7 +68,7 @@
                   <Font name="Gurmukhi MN" size="22.0" />
                </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #ffa906;" text="Profile">
+                <Button mnemonicParsing="false" onAction="#handleProfileMenuItem" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #ffa906;" text="Profile">
                     <VBox.margin>
                         <Insets left="40.0" right="40.0" />
                     </VBox.margin>
