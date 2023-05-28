@@ -1,24 +1,58 @@
 package main.java;
 
-import javafx.application.Application;
-import javafx.stage.Stage;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class ItemDisplayController extends Application {
-    public void displayItem() throws FileNotFoundException {
+public class ItemDisplayController implements Initializable {
+    @FXML
+    private TableView<Item> itemTableView;
+
+    @FXML
+    private TableColumn<Item, String> idCol;
+
+    @FXML
+    private TableColumn<Item, String> titleCol;
+
+    @FXML
+    private TableColumn<Item, String> rentTypeCol;
+
+    @FXML
+    private TableColumn<Item, String> loanTypeCol;
+
+    @FXML
+    private TableColumn<Item, Integer> copiesCol;
+
+    @FXML
+    private TableColumn<Item, String> feesCol;
+
+    @FXML
+    private TableColumn<Item, String> gerneCol;
+
+    ObservableList<Item> itemObservableList = FXCollections.observableArrayList();
+
+
+    public void readFile() {
         String line = "";
         String splitBy = ",";
         try {
             // parsing a CSV file into BufferedReader class constructor
             BufferedReader br = new BufferedReader(
-                    new FileReader("/resources/database/items.txt"));
+                    new FileReader("src\\resources\\database\\items.txt"));
             while ((line = br.readLine()) != null) // returns a Boolean value
             {
                 String[] items = line.split(splitBy); // use comma as separator
+                // Testing
                 System.out.println("-------------------------------");
                 System.out.println("1. ID:                 " + items[0]);
                 System.out.println("2. Title:              " + items[1]);
@@ -31,6 +65,12 @@ public class ItemDisplayController extends Application {
                 } else {
                     System.out.println("7. Genre: " + items[6]);
                 }
+
+                if (items.length == 6) {
+                    itemObservableList.add(new Item(items[0], items[1], items[2], items[3], 3, 6, "none"));
+                } else {
+                    itemObservableList.add(new Item(items[0], items[1], items[2], items[3], 5, 6, items[6]));
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -38,7 +78,17 @@ public class ItemDisplayController extends Application {
     }
 
     @Override
-    public void start(Stage stage) throws Exception {
-        
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        readFile();
+
+        idCol.setCellValueFactory(new PropertyValueFactory<>("idCol"));
+        titleCol.setCellValueFactory(new PropertyValueFactory<>("titleCol"));
+        rentTypeCol.setCellValueFactory(new PropertyValueFactory<>("rentTypeCol"));
+        loanTypeCol.setCellValueFactory(new PropertyValueFactory<>("loanTypeCol"));
+        copiesCol.setCellValueFactory(new PropertyValueFactory<>("copiesCol"));
+        feesCol.setCellValueFactory(new PropertyValueFactory<>("feesCol"));
+        gerneCol.setCellValueFactory(new PropertyValueFactory<>("gerneCol"));
+
+        itemTableView.setItems(itemObservableList);
     }
 }

@@ -208,11 +208,11 @@ public class RentalController {
 
                     Item item;
                     if (rentType.equalsIgnoreCase("Game")) {
-                        item = new Game("Game", false, id, title, rentType, loanType, numberOfCopies, rentalFee, genre);
+                        item = new Game(id, title, rentType, loanType, numberOfCopies, rentalFee, genre);
                     } else if (rentType.equalsIgnoreCase("Record")) {
-                        item = new Record("Record", false, id, title, rentType, loanType, numberOfCopies, rentalFee, genre);
+                        item = new Record(id, title, rentType, loanType, numberOfCopies, rentalFee, genre);
                     } else if (rentType.equalsIgnoreCase("DVD")) {
-                        item = new DVD("DVD", false, id, title, rentType, loanType, numberOfCopies, rentalFee, genre);
+                        item = new DVD(id, title, rentType, loanType, numberOfCopies, rentalFee, genre);
                     } else {
                         System.out.println("Invalid item data: " + line);
                         continue;

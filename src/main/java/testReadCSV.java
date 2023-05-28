@@ -11,7 +11,7 @@ public class testReadCSV {
         try {
             // parsing a CSV file into BufferedReader class constructor
             BufferedReader br = new BufferedReader(
-                    new FileReader("D://My Documents//workbench//romit//genieStore//src//database//items.txt"));
+                    new FileReader("src\\resources\\database\\items.txt"));
             while ((line = br.readLine()) != null) // returns a Boolean value
             {
                 String[] items = line.split(splitBy); // use comma as separator
