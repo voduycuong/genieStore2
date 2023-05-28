@@ -2,12 +2,12 @@ package main.java;
 
 import java.util.ArrayList;
 import java.util.List;
+
 public class Customer {
     private String name;
     private String customerId;
     private String phone;
     private String address;
-
     private int numberOfRentals;
     private String customerType;
     private String username;
@@ -33,6 +33,10 @@ public class Customer {
         return name;
     }
 
+    public void setName(String str) {
+        name = str;
+    }
+
     public String getCustomerId() {
         return customerId;
     }
@@ -49,8 +53,16 @@ public class Customer {
         return numberOfRentals;
     }
 
+    public void increaseNumberOfRentals() {
+        numberOfRentals++;
+    }
+
     public String getCustomerType() {
         return customerType;
+    }
+
+    public void setCustomerType(String str) {
+        customerType = str;
     }
 
     public String getUsername() {

@@ -39,13 +39,13 @@ public class MenuBarController {
     @FXML
     private void handleCustomerMenuItem() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/database/CustomerProfile.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/database/CustomerDisplay.fxml"));
             Parent root = loader.load();
 
             Stage customerStage = new Stage();
             customerStage.setScene(new Scene(root));
             customerStage.setResizable(false);
-            customerStage.setTitle("Customer Profile");
+            customerStage.setTitle("Customers List");
             customerStage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -94,6 +94,10 @@ public class MenuBarController {
     }
 
     @FXML
+    private void handleDashboardButton() {
+    }
+
+    @FXML
     private void handleRentButton() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/database/RentItem.fxml"));
@@ -127,6 +131,17 @@ public class MenuBarController {
 
     @FXML
     private void handleProfileButton() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/database/CustomerProfile.fxml"));
+            Parent root = loader.load();
 
+            Stage customerStage = new Stage();
+            customerStage.setScene(new Scene(root));
+            customerStage.setResizable(false);
+            customerStage.setTitle("Customer Profile");
+            customerStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

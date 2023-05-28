@@ -15,7 +15,7 @@ public class CustomerManager {
         loadCustomersFromDatabase();
     }
 
-    private void loadCustomersFromDatabase() {
+    public void loadCustomersFromDatabase() {
         try (BufferedReader reader = new BufferedReader(new FileReader(databaseFilePath))) {
             String line;
             while ((line = reader.readLine()) != null) {
@@ -39,7 +39,7 @@ public class CustomerManager {
     }
 
 
-    private void saveCustomersToDatabase() {
+    public void saveCustomersToDatabase() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(databaseFilePath))) {
             for (Customer customer : customers) {
                 String line = customer.getCustomerId() + "," +
@@ -72,14 +72,14 @@ public class CustomerManager {
     public void promoteCustomer(Customer customer) {
         if (customer instanceof Guest) {
             Guest guest = (Guest) customer;
-            if (guest.getBorrowedItemsCount() > 3) {
+            if (guest.getNumberOfRentals() > 3) {
                 Regular regular = new Regular(customer.getName(), customer.getCustomerId(), customer.getPhone(), customer.getAddress(), customer.getNumberOfRentals(), customer.getCustomerType(), customer.getUsername(), customer.getPassword());
                 customers.remove(customer);
                 customers.add(regular);
             }
         } else if (customer instanceof Regular) {
             Regular regular = (Regular) customer;
-            if (regular.getBorrowedItemsCount() > 5) {
+            if (regular.getNumberOfRentals() > 5) {
                 VIP vip = new VIP(customer.getName(), customer.getCustomerId(), customer.getPhone(), customer.getAddress(), customer.getNumberOfRentals(), customer.getCustomerType(), customer.getUsername(), customer.getPassword());
                 customers.remove(customer);
                 customers.add(vip);

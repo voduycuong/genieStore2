@@ -34,7 +34,7 @@ public class CustomerController {
     private CustomerManager customerManager;
 
     public void initialize() {
-        String databaseFilePath = "src\\resources\\database\\customers.txt"; // Specify the actual file path here
+        String databaseFilePath = "src\\resources\\database\\customers.txt";
         customerManager = new CustomerManager(databaseFilePath);
     }
 
@@ -125,26 +125,18 @@ public class CustomerController {
             return;
         }
 
-        if (customer instanceof Guest) {
-            Guest guest = (Guest) customer;
-            if (guest.canBePromoted()) {
-                Regular regular = new Regular(customer.getName(), customer.getCustomerId(), customer.getPhone(),
-                        customer.getAddress(), customer.getNumberOfRentals(), customer.getCustomerType(),
-                        customer.getUsername(), customer.getPassword());
-                customerManager.addOrUpdateCustomer(regular);
-                customerManager.addOrUpdateCustomer(regular);
+        if (customer.getCustomerType().equals("Guest")) {
+            if (customer.getNumberOfRentals() > 3) {
+                customer.setCustomerType("Regular");
+                customerManager.saveCustomersToDatabase();
                 showInfoAlert("Customer promoted to Regular.");
             } else {
                 showErrorAlert("Guest customer must have borrowed and returned more than 3 items to be promoted.");
             }
-        } else if (customer instanceof Regular) {
-            Regular regular = (Regular) customer;
-            if (regular.canBePromoted()) {
-                VIP vip = new VIP(customer.getName(), customer.getCustomerId(), customer.getPhone(),
-                        customer.getAddress(), customer.getNumberOfRentals(), customer.getCustomerType(),
-                        customer.getUsername(), customer.getPassword());
-                customerManager.addOrUpdateCustomer(regular);
-                customerManager.addOrUpdateCustomer(vip);
+        } else if (customer.getCustomerType().equals("Regular")) {
+            if (customer.getNumberOfRentals() > 5) {
+                customer.setCustomerType("VIP");
+                customerManager.saveCustomersToDatabase();
                 showInfoAlert("Customer promoted to VIP.");
             } else {
                 showErrorAlert("Regular customer must have borrowed and returned more than 5 items to be promoted.");
