@@ -4,8 +4,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.scene.Parent;
+import javafx.stage.StageStyle;
+import javafx.scene.input.MouseEvent;
 
-import java.awt.event.ActionEvent;
+import java.io.IOException;
 
 public class MenuBarController {
 
@@ -61,8 +67,8 @@ public class MenuBarController {
     }
 
     @FXML
-    private void handleCreateCustomersMenuItem(ActionEvent event) {
-        MenuBarApplication.loadWindow(getClass().getResource("/resources/database/customer.fxml"), "Customer Info", null);
+    private void handleCreateCustomersMenuItem() {
+//        MenuBarApplication.loadWindow(getClass().getResource("/resources/database/customer.fxml"), "Customer Info", null);
     }
 
     @FXML
@@ -97,6 +103,22 @@ public class MenuBarController {
 
     @FXML
     private void handleAboutMenuItem() {
-        System.out.println("About menu item clicked");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/database/AboutScreen.fxml"));
+            Parent aboutScreenRoot = loader.load();
+
+            Stage aboutStage = new Stage();
+            aboutStage.initStyle(StageStyle.UNDECORATED);
+            aboutStage.setTitle("About");
+            aboutStage.setScene(new Scene(aboutScreenRoot));
+            aboutStage.show();
+
+            // Add event handler to close About screen on mouse click
+            aboutScreenRoot.addEventHandler(MouseEvent.MOUSE_CLICKED, (event) -> {
+                aboutStage.close();
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

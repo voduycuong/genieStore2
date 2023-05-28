@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="316.0" prefWidth="652.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox layoutX="-1.0" prefHeight="340.0" prefWidth="286.0" style="-fx-background-color: black;">
+         <children>
+            <ImageView fitHeight="246.0" fitWidth="253.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/logo-square.png" />
+               </image>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="15.0" top="50.0" />
+               </VBox.margin>
+            </ImageView>
+         </children>
+      </VBox>
+      <HBox layoutX="285.0" prefHeight="340.0" prefWidth="367.0" style="-fx-background-color: FFC500;">
+         <children>
+            <VBox prefHeight="340.0" prefWidth="361.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="58.0" prefWidth="362.0" style="-fx-font-size: 22; -fx-font-weight: bold;" text="About Dragon's Den" textAlignment="CENTER" textFill="#d90000" wrapText="true">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label prefHeight="239.0" prefWidth="342.0" style="-fx-font-size: 15px;" text="Welcome to our Rental Shop, where you can find a wide range of items available for rent. Whether you need equipment for an event, tools for a DIY project, or recreational gear for outdoor adventures, we have you covered. Our mission is to provide high-quality rental services with excellent customer satisfaction. Explore our collection and make your rental experience convenient and enjoyable." textAlignment="JUSTIFY" wrapText="true">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label prefHeight="18.0" prefWidth="362.0" style="-fx-font-weight: Bold;" text="\@TeamDragon" textAlignment="RIGHT">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="270.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
