@@ -21,7 +21,7 @@
                 <TableColumn fx:id="genreCol" prefWidth="96.0" text="Genre" />
             </columns>
         </TableView>
-        <TextField fx:id="searchField" layoutX="606.0" layoutY="30.0" prefHeight="25.0" prefWidth="212.0" promptText="Enter search keyword" />
+        <TextField fx:id="searchField" layoutX="606.0" layoutY="30.0" prefHeight="25.0" prefWidth="212.0" promptText="Enter Search Title" />
         <Button fx:id="searchButton" layoutX="838.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleSearchButton" text="Search" />
       <Label layoutX="20.0" layoutY="27.0" text="Item Management Database">
          <font>

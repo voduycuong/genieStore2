@@ -27,6 +27,29 @@ public class LoginController {
     @FXML
     private PasswordField passwordField;
 
+    private boolean isAdmin;
+    private Admin admin;
+
+    private void clearLoginFields() {
+        usernameField.clear();
+        passwordField.clear();
+    }
+
+    private boolean isAdminLoggedIn;
+
+
+    private void setAdmin(boolean isAdminLoggedIn) {
+        this.isAdminLoggedIn = isAdminLoggedIn;
+    }
+
+    private void showErrorAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
     public void setStage(Stage stage) {
         this.stage = stage;
     }
@@ -41,6 +64,19 @@ public class LoginController {
         passwordField.setOnAction(event -> login());
     }
 
+
+    @FXML
+    private void handleAdminLogin() {
+        String username = usernameField.getText();
+        String password = passwordField.getText();
+
+        if (admin.authenticate(username, password)) {
+            setAdmin(true);
+            clearLoginFields();
+        } else {
+            showErrorAlert("Invalid username or password.");
+        }
+    }
     @FXML
     public void login() {
         String username = usernameField.getText();
@@ -51,7 +87,7 @@ public class LoginController {
 
             for (String customer : customerData) {
                 String[] fields = customer.split(",");
-                if (fields.length >= 8 && fields[6].trim().equals(username) && fields[7].trim().equals(password)) {
+                if (fields.length >= 8 && fields[6].trim().equals(username) && fields[7].trim().equals(password) && admin.authenticate("admin", "admin123")) {
                     currentUserId = fields[0].trim(); // Set the current user ID
                     showAlert("Login Successful!", "Welcome, " + fields[1].trim() + "!");
 
