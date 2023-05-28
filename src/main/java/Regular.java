@@ -1,19 +1,9 @@
 package main.java;
 
 public class Regular extends Customer {
-    private int borrowedItemsCount;
 
     public Regular(String name, String customerId, String phone, String address, int numberOfRentals, String customerType, String username, String password) {
         super(name, customerId, phone, address, numberOfRentals, customerType, username, password);
-        borrowedItemsCount = 0;
-    }
-
-    public int getBorrowedItemsCount() {
-        return borrowedItemsCount;
-    }
-
-    public void incrementBorrowedItemsCount() {
-        borrowedItemsCount++;
     }
 
     public boolean canBorrowItem() {
@@ -21,6 +11,6 @@ public class Regular extends Customer {
     }
 
     public boolean canBePromoted() {
-        return borrowedItemsCount > 5;
+        return getNumberOfRentals() > 5;
     }
 }
