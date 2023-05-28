@@ -136,7 +136,17 @@ public class MenuBarController {
 
     @FXML
     private void handleRentMenuItem() {
-        loadView("rent.fxml");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/database/RentItem.fxml"));
+            Parent root = loader.load();
+
+            Stage customerStage = new Stage();
+            customerStage.setScene(new Scene(root));
+            customerStage.setTitle("Rent Item");
+            customerStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
