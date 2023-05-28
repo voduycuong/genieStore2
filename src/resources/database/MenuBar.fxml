@@ -13,7 +13,7 @@
 
 <AnchorPane prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.MenuBarController">
     <children>
-        <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1000.0">
+        <MenuBar prefHeight="25.0" prefWidth="1000.0">
             <menus>
                 <Menu mnemonicParsing="false" text="File">
                     <items>
@@ -22,7 +22,7 @@
                         <MenuItem mnemonicParsing="false" onAction="#handleExitMenuItem" text="Exit" />
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" onAction="#handleCustomerMenuItem" text="Customers">
+                <Menu mnemonicParsing="false" text="Customers">
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#handleCustomerMenuItem" text="Edit" />
                     </items>
@@ -42,7 +42,7 @@
                 </Menu>
             </menus>
         </MenuBar>
-        <VBox layoutY="29.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="775.0" prefWidth="225.0" spacing="40.0" style="-fx-background-color: #4c4c4c;">
+        <VBox layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="779.0" prefWidth="225.0" spacing="40.0" style="-fx-background-color: #4c4c4c;">
             <children>
                 <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #ffa906;" text="Dashboard">
                     <VBox.margin>

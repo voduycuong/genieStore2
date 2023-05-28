@@ -210,3 +210,4 @@ C209,Robert Long,2320 Pear Boulevard,05867099250,0,Guest,robertlong, longrobert1
 C210,Joseph Lopez,2330 Grape Street,05878190369,2,VIP,josephlopez, lopezjoseph123
 C211,Thomas Martin,2340 Cherry Avenue,05889281478,1,Regular,thomasmartin, martinthomas123
 C212,Steven Martinez,2350 Apple Boulevard,05900372587,0,Guest,stevenmartinez, martinezsteven123
+1233333333,Dũng,23,23,0,VIP,username,password

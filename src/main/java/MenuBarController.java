@@ -2,12 +2,14 @@ package main.java;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -107,8 +109,14 @@ public class MenuBarController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/database/AboutScreen.fxml"));
             Parent aboutScreenRoot = loader.load();
 
+            Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+            double centerX = screenBounds.getMinX() + (screenBounds.getWidth() / 2);
+            double centerY = screenBounds.getMinY() + (screenBounds.getHeight() / 2);
+
             Stage aboutStage = new Stage();
             aboutStage.initStyle(StageStyle.UNDECORATED);
+            aboutStage.setX(centerX - (750 / 2)); // Set the X position at the center of the screen
+            aboutStage.setY(centerY - (500 / 2)); // Set the Y position at the center of the screen
             aboutStage.setTitle("About");
             aboutStage.setScene(new Scene(aboutScreenRoot));
             aboutStage.show();

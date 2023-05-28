@@ -4,12 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
+
 import java.util.List;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
 
 public class CustomerController {
     @FXML
@@ -44,9 +40,10 @@ public class CustomerController {
     private CustomerManager customerManager;
 
     public void initialize() {
-        String databaseFilePath = "D:\\CODDING\\genieStore2\\src\\resources\\database\\customers.txt"; // Specify the actual file path here
+        String databaseFilePath = "src\\resources\\database\\customers.txt"; // Specify the actual file path here
         customerManager = new CustomerManager(databaseFilePath);
     }
+
     @FXML
     private void handleAddButton(ActionEvent event) {
         String name = nameField.getText();

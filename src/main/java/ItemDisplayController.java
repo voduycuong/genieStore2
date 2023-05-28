@@ -52,19 +52,19 @@ public class ItemDisplayController implements Initializable {
             {
                 String[] items = line.split(splitBy); // use comma as separator
 
-//                // Testing
-//                System.out.println("-------------------------------");
-//                System.out.println("1. ID:                 " + items[0]);
-//                System.out.println("2. Title:              " + items[1]);
-//                System.out.println("3. Rent type:          " + items[2]);
-//                System.out.println("4. Loan type:          " + items[3]);
-//                System.out.println("5. Number of copies:   " + items[4]);
-//                System.out.println("6. Rental fee:         " + items[5]);
-//                if (items.length == 6) {
-//                    System.out.println("7. Genre: none");
-//                } else {
-//                    System.out.println("7. Genre: " + items[6]);
-//                }
+                // Testing
+                System.out.println("-------------------------------");
+                System.out.println("1. ID:                 " + items[0]);
+                System.out.println("2. Title:              " + items[1]);
+                System.out.println("3. Rent type:          " + items[2]);
+                System.out.println("4. Loan type:          " + items[3]);
+                System.out.println("5. Number of copies:   " + items[4]);
+                System.out.println("6. Rental fee:         " + items[5]);
+                if (items.length == 6) {
+                    System.out.println("7. Genre: none");
+                } else {
+                    System.out.println("7. Genre: " + items[6]);
+                }
 
                 if (items.length == 6) {
                     itemObservableList.add(new Item(items[0], items[1], items[2], items[3], 3, 6, "none"));

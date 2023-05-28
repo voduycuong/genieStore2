@@ -1,28 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="316.0" prefWidth="652.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="316.0" prefWidth="652.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox layoutX="-1.0" prefHeight="340.0" prefWidth="286.0" style="-fx-background-color: black;">
-         <children>
-            <ImageView fitHeight="246.0" fitWidth="253.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/logo-square.png" />
-               </image>
-               <VBox.margin>
-                  <Insets bottom="5.0" left="15.0" top="50.0" />
-               </VBox.margin>
-            </ImageView>
-         </children>
-      </VBox>
       <HBox layoutX="285.0" prefHeight="340.0" prefWidth="367.0" style="-fx-background-color: FFC500;">
          <children>
-            <VBox prefHeight="340.0" prefWidth="361.0">
+            <VBox prefHeight="340.0" prefWidth="361.0" spacing="12.0">
                <children>
                   <Label alignment="CENTER" prefHeight="58.0" prefWidth="362.0" style="-fx-font-size: 22; -fx-font-weight: bold;" text="About Dragon's Den" textAlignment="CENTER" textFill="#d90000" wrapText="true">
                      <font>
@@ -32,12 +23,12 @@
                         <Insets top="10.0" />
                      </VBox.margin>
                   </Label>
-                  <Label prefHeight="225.0" prefWidth="342.0" style="-fx-font-size: 15px;" text="Discover Dragon's Den, your ultimate rental destination for games, DVDs, movies, and records. Immerse yourself in thrilling adventures, captivating stories, and nostalgic tunes. Our extensive collection and friendly staff ensure a convenient and unforgettable rental experience. Visit Dragon's Den today and unlock entertainment at your fingertips.     " textAlignment="JUSTIFY" wrapText="true">
+                  <Label prefHeight="199.0" prefWidth="316.0" style="-fx-font-size: 15px;" text="Discover Dragon's Den, your ultimate rental destination for games, DVDs, movies, and records. Immerse yourself in thrilling adventures, captivating stories, and nostalgic tunes. Our extensive collection and friendly staff ensure a convenient and unforgettable rental experience. Visit Dragon's Den today and unlock entertainment at your fingertips.     " textAlignment="JUSTIFY" wrapText="true">
                      <font>
                         <Font size="10.0" />
                      </font>
                      <VBox.margin>
-                        <Insets left="15.0" />
+                        <Insets left="25.0" right="15.0" />
                      </VBox.margin>
                   </Label>
                   <Label prefHeight="18.0" prefWidth="362.0" style="-fx-font-weight: Bold;" text="\@TeamDragon" textAlignment="RIGHT">
@@ -49,5 +40,10 @@
             </VBox>
          </children>
       </HBox>
+      <ImageView fitHeight="203.0" fitWidth="201.0" layoutX="40.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/logo-square.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
