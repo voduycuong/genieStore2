@@ -39,8 +39,9 @@ public class ItemDisplayController implements Initializable {
     @FXML
     private TableColumn<Item, String> gerneCol;
 
-    ObservableList<Item> itemObservableList = FXCollections.observableArrayList();
-
+    ObservableList<Item> itemObservableList = FXCollections.observableArrayList(
+            new Item("1", "2", "3", "4", 5, 6, "7")
+    );
 
     public void readFile() {
         String line = "";
@@ -66,11 +67,13 @@ public class ItemDisplayController implements Initializable {
                     System.out.println("7. Genre: " + items[6]);
                 }
 
-                if (items.length == 6) {
-                    itemObservableList.add(new Item(items[0], items[1], items[2], items[3], 3, 6, "none"));
-                } else {
-                    itemObservableList.add(new Item(items[0], items[1], items[2], items[3], 5, 6, items[6]));
-                }
+//                if (items.length == 6) {
+//                    itemObservableList.add(new Item(items[0], items[1], items[2], items[3], 3, 6, "none"));
+//                } else {
+//                    itemObservableList.add(new Item(items[0], items[1], items[2], items[3], 5, 6, items[6]));
+//                }
+
+
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -79,15 +82,15 @@ public class ItemDisplayController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        readFile();
+//        readFile();
 
-        idCol.setCellValueFactory(new PropertyValueFactory<>("idCol"));
-        titleCol.setCellValueFactory(new PropertyValueFactory<>("titleCol"));
-        rentTypeCol.setCellValueFactory(new PropertyValueFactory<>("rentTypeCol"));
-        loanTypeCol.setCellValueFactory(new PropertyValueFactory<>("loanTypeCol"));
-        copiesCol.setCellValueFactory(new PropertyValueFactory<>("copiesCol"));
-        feesCol.setCellValueFactory(new PropertyValueFactory<>("feesCol"));
-        gerneCol.setCellValueFactory(new PropertyValueFactory<>("gerneCol"));
+        idCol.setCellValueFactory(new PropertyValueFactory<Item, String>("idCol"));
+        titleCol.setCellValueFactory(new PropertyValueFactory<Item, String>("titleCol"));
+        rentTypeCol.setCellValueFactory(new PropertyValueFactory<Item, String>("rentTypeCol"));
+        loanTypeCol.setCellValueFactory(new PropertyValueFactory<Item, String>("loanTypeCol"));
+        copiesCol.setCellValueFactory(new PropertyValueFactory<Item, Integer>("copiesCol"));
+        feesCol.setCellValueFactory(new PropertyValueFactory<Item, String>("feesCol"));
+        gerneCol.setCellValueFactory(new PropertyValueFactory<Item, String>("gerneCol"));
 
         itemTableView.setItems(itemObservableList);
     }
