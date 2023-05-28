@@ -1,15 +1,63 @@
 package main.java;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
 public class CustomerManager {
     private List<Customer> customers;
+    private String databaseFilePath;
 
-    public CustomerManager() {
-        customers = new ArrayList<>();
+    public CustomerManager(String databaseFilePath) {
+        this.customers = new ArrayList<>();
+        this.databaseFilePath = databaseFilePath;
+        loadCustomersFromDatabase();
     }
+
+    private void loadCustomersFromDatabase() {
+        try (BufferedReader reader = new BufferedReader(new FileReader(databaseFilePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] fields = line.split(",");
+                if (fields.length == 8) {
+                    String customerId = fields[0];
+                    String name = fields[1];
+                    String address = fields[2];
+                    String phone = fields[3];
+                    int numberOfRentals = Integer.parseInt(fields[4]);
+                    String customerType = fields[5];
+                    String username = fields[6];
+                    String password = fields[7];
+                    Customer customer = new Customer(name, customerId, phone, address, numberOfRentals, customerType, username, password);
+                    customers.add(customer);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private void saveCustomersToDatabase() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(databaseFilePath))) {
+            for (Customer customer : customers) {
+                String line = customer.getCustomerId() + "," +
+                        customer.getName() + "," +
+                        customer.getAddress() + "," +
+                        customer.getPhone() + "," +
+                        customer.getNumberOfRentals() + "," +
+                        customer.getCustomerType() + "," +
+                        customer.getUsername() + "," +
+                        customer.getPassword();
+                writer.write(line);
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public void addOrUpdateCustomer(Customer customer) {
         int index = findCustomerIndex(customer.getCustomerId());
@@ -18,6 +66,7 @@ public class CustomerManager {
         } else {
             customers.add(customer);
         }
+        saveCustomersToDatabase();
     }
 
     public void promoteCustomer(Customer customer) {
