@@ -97,6 +97,21 @@ public class MenuBarController {
     }
 
     @FXML
+    private void handleItemsMenuItem() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/database/ItemDisplay.fxml"));
+            Parent root = loader.load();
+
+            Stage customerStage = new Stage();
+            customerStage.setScene(new Scene(root));
+            customerStage.setTitle("Item Edit");
+            customerStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     private void handleEditItemsMenuItem() {
         System.out.println("Edit Items menu item clicked");
     }

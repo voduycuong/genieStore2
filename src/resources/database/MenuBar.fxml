@@ -17,8 +17,6 @@
             <menus>
                 <Menu mnemonicParsing="false" text="File">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#handleExitMenuItem" text="Item" />
-                        <MenuItem mnemonicParsing="false" onAction="#handleExitMenuItem" text="Customer" />
                         <MenuItem mnemonicParsing="false" onAction="#handleExitMenuItem" text="Exit" />
                     </items>
                 </Menu>
@@ -29,14 +27,11 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Items">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#handleCreateItemsMenuItem" text="Create" />
-                        <MenuItem mnemonicParsing="false" onAction="#handleEditItemsMenuItem" text="Edit" />
-                        <MenuItem mnemonicParsing="false" onAction="#handleDeleteItemsMenuItem" text="Delete" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleItemsMenuItem" text="Edit" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#handleAboutMenuItem" text="How to use" />
                         <MenuItem mnemonicParsing="false" onAction="#handleAboutMenuItem" text="About" />
                     </items>
                 </Menu>

@@ -4,8 +4,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
@@ -37,7 +39,14 @@ public class ItemDisplayController implements Initializable {
     @FXML
     private TableColumn<Item, String> genreCol;
 
-    ObservableList<Item> itemObservableList = FXCollections.observableArrayList();
+    @FXML
+    private TextField searchField;
+
+    @FXML
+    private Button searchButton;
+
+    private ItemManager itemManager;
+    private ObservableList<Item> itemObservableList;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -52,7 +61,26 @@ public class ItemDisplayController implements Initializable {
         feesCol.setCellValueFactory(new PropertyValueFactory<>("rentalFee"));
         genreCol.setCellValueFactory(new PropertyValueFactory<>("genre"));
 
-        itemObservableList.addAll(items);
+        itemObservableList = FXCollections.observableArrayList(items);
         itemTableView.setItems(itemObservableList);
+
+        itemManager = new ItemManager(items);
+
+        // Search button event handler
+        searchButton.setOnAction(event -> handleSearchButton());
+    }
+
+    @FXML
+    private void handleSearchButton() {
+        String keyword = searchField.getText().toLowerCase().trim();
+
+        // Apply the filter based on the search keyword
+        itemManager.applySearchFilter(keyword);
+
+        // Update the item list in the table view
+        itemObservableList.setAll(itemManager.getFilteredList());
+
+        // Clear the search field after filtering
+        searchField.clear();
     }
 }
