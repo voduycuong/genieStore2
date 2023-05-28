@@ -21,24 +21,24 @@ public class MenuBarApplication extends Application {
         primaryStage.show();
     }
 
-    public static Object loadWindow(URL loc, String title, Stage parentStage) {
-        try {
-            FXMLLoader loader = new FXMLLoader(loc);
-            Parent root = loader.load();
-
-            LoginController loginController = loader.getController();
-            loginController.setStage(parentStage);
-
-            parentStage.setScene(new Scene(root));
-            parentStage.setTitle(title);
-
-            parentStage.show();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
+//    public static Object loadWindow(URL loc, String title, Stage parentStage) {
+//        try {
+//            FXMLLoader loader = new FXMLLoader(loc);
+//            Parent root = loader.load();
+//
+//            LoginController loginController = loader.getController();
+//            loginController.setStage(parentStage);
+//
+//            parentStage.setScene(new Scene(root));
+//            parentStage.setTitle(title);
+//
+//            parentStage.show();
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        return null;
+//    }
 
     public static void main(String[] args) {
         launch(args);
