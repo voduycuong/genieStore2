@@ -1,11 +1,15 @@
 package main.java;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.stage.Stage;
 
-import java.awt.event.ActionEvent;
+import java.io.IOException;
 
 public class MenuBarController {
 
@@ -31,13 +35,7 @@ public class MenuBarController {
     private MenuItem exitMenuItem;
 
     @FXML
-    private MenuItem createCustomerMenuItem;
-
-    @FXML
-    private MenuItem editCustomerMenuItem;
-
-    @FXML
-    private MenuItem deleteCustomerMenuItem;
+    private MenuItem customerMenuItem;
 
     @FXML
     private MenuItem createItemMenuItem;
@@ -54,6 +52,12 @@ public class MenuBarController {
     @FXML
     private MenuItem aboutMenuItem;
 
+    private Stage stage;
+
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
+
     @FXML
     private void handleExitMenuItem() {
         // Implement the logic to exit the application
@@ -61,23 +65,23 @@ public class MenuBarController {
     }
 
     @FXML
-    private void handleCreateCustomersMenuItem(ActionEvent event) {
-        MenuBarApplication.loadWindow(getClass().getResource("/resources/database/customer.fxml"), "Customer Info", null);
-    }
-
-    @FXML
-    private void handleEditCustomersMenuItem() {
-        System.out.println("Edit Customers menu item clicked");
-    }
-
-    @FXML
-    private void handleDeleteCustomersMenuItem() {
-        System.out.println("Delete Customers menu item clicked");
-    }
-
-    @FXML
     private void handleCreateItemsMenuItem() {
         System.out.println("Create Items menu item clicked");
+    }
+
+    @FXML
+    private void handleCustomerMenuItem() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/database/customer.fxml"));
+            Parent root = loader.load();
+
+            Stage customerStage = new Stage();
+            customerStage.setScene(new Scene(root));
+            customerStage.setTitle("Customer Info");
+            customerStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

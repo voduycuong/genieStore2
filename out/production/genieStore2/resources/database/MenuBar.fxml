@@ -11,16 +11,15 @@
             <menus>
                 <Menu mnemonicParsing="false" text="File">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#handleExitMenuItem" text="Exit" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleExitMenuItem" text="Item" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleExitMenuItem" text="Customer" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleExitMenuItem" text="Exit" />
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Customers">
-                    <items>
-                        <MenuItem mnemonicParsing="false" onAction="#handleCreateCustomersMenuItem" text="Create" />
-                        <MenuItem mnemonicParsing="false" onAction="#handleEditCustomersMenuItem" text="Edit" />
-                        <MenuItem mnemonicParsing="false" onAction="#handleDeleteCustomersMenuItem" text="Delete" />
-                    </items>
-                </Menu>
+                <Menu mnemonicParsing="false" onAction="#handleCustomerMenuItem" text="Customers">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleCustomerMenuItem" text="Edit" />
+               </items></Menu>
                 <Menu mnemonicParsing="false" text="Items">
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#handleCreateItemsMenuItem" text="Create" />
@@ -28,14 +27,10 @@
                         <MenuItem mnemonicParsing="false" onAction="#handleDeleteItemsMenuItem" text="Delete" />
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Option">
-                    <items>
-                        <MenuItem mnemonicParsing="false" onAction="#handleAppearanceMenuItem" text="Appearance" />
-                    </items>
-                </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#handleAboutMenuItem" text="About" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleAboutMenuItem" text="How to use" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleAboutMenuItem" text="About" />
                     </items>
                 </Menu>
             </menus>

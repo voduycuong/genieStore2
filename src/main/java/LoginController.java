@@ -2,11 +2,13 @@ package main.java;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -52,7 +54,24 @@ public class LoginController {
                 if (fields.length >= 8 && fields[6].trim().equals(username) && fields[7].trim().equals(password)) {
                     currentUserId = fields[0].trim(); // Set the current user ID
                     showAlert("Login Successful!", "Welcome, " + fields[1].trim() + "!");
-                    return; // Exit the method after successful login
+
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/database/MenuBar.fxml"));
+                    Parent root = loader.load();
+
+                    MenuBarController menuBarController = loader.getController();
+                    menuBarController.setStage(stage);
+                    stage.setTitle("Main");
+
+                    Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+                    double centerX = screenBounds.getMinX() + (screenBounds.getWidth() / 2);
+                    double centerY = screenBounds.getMinY() + (screenBounds.getHeight() / 2);
+
+                    stage.setX(centerX - (1000 / 2));
+                    stage.setY(centerY - (800 / 2));
+
+                    stage.setScene(new Scene(root));
+                    stage.show();
+                    return;
                 }
             }
 
@@ -61,6 +80,7 @@ public class LoginController {
             showAlert("Error", "Unable to read customer data.");
         }
     }
+
 
     private List<String> readCustomerData() throws IOException {
         Path customersFilePath = Path.of("src/resources/database/customers.txt");
@@ -73,7 +93,7 @@ public class LoginController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/database/Signup.fxml"));
             Parent root = loader.load();
 
-            main.java.SignupController signupController = loader.getController();
+            SignupController signupController = loader.getController();
             signupController.setStage(stage);
 
             stage.setScene(new Scene(root));
