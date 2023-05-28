@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="910.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.ItemDisplayController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="485.0" prefWidth="718.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.RentalController">
     <children>
-        <TableView fx:id="itemTableView" layoutX="14.0" layoutY="107.0" prefHeight="362.0" prefWidth="942.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0">
+        <TableView fx:id="itemTableView" layoutX="46.0" layoutY="81.0" prefHeight="319.0" prefWidth="583.0">
             <columns>
                 <TableColumn fx:id="idCol" minWidth="1.0" prefWidth="92.0" text="ID" />
                 <TableColumn fx:id="titleCol" prefWidth="291.0" text="Title" />
