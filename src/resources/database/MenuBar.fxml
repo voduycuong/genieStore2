@@ -83,7 +83,7 @@
                 <fx:include source="dashboard.fxml" />
             </children>
         </HBox>
-      <Text fill="#ffe200" layoutX="400.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FEATURED ITEMS">
+      <Text fill="#ffe200" layoutX="424.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FEATURED ITEMS">
          <font>
             <Font name="Gurmukhi MN" size="50.0" />
          </font>
