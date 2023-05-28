@@ -1,23 +1,23 @@
 I001-2001,Medal of Honour,Game,1-week,2,3.99
-I002-1988,White Castle,Record,1-week,3,0.99,Comedy
+I002-1988,White Castle,Record,1-week,4,0.99,Comedy
 I003-1992,Alpha Dog,Record,1-week,2,1.99,Action
 I004-1999,Rat Race,DVD,1-week,3,1.99,Horror
-I005-2015,Halo,Game,2-day,1,4.99
+I005-2015,Halo,Game,2-day,2,4.99
 I006-2013,Halloween,DVD,2-day,1,0.99,Horror
 I007-1995,Jumanji,DVD,2-day,3,1.5,Action
 I008-1997,Titanic,Record,1-week,3,0.75,Drama
 I009-2004,Half-Life 2,Game,1-week,2,5.99
-I010-2010,Inception,DVD,2-day,5,2.99,Action
+I010-2010,Inception,DVD,2-day,6,2.99,Action
 I011-1980,The Shining,Record,1-week,3,0.99,Horror
 I012-2020,The Last of Us Part II,Game,2-day,1,9.99
 I013-2005,Brokeback Mountain,DVD,1-week,3,1.5,Drama
 I014-2008,Grand Theft Auto IV,Game,1-week,3,6.99
 I015-1984,Ghostbusters,Record,2-day,2,1.25,Comedy
 I016-2009,Zombieland,DVD,2-day,1,2.25,Comedy
-I017-2012,The Dark Knight Rises,DVD,1-week,4,1.75,Action
+I017-2012,The Dark Knight Rises,DVD,1-week,5,1.75,Action
 I018-2007,BioShock,Game,2-day,5,7.99
 I019-1975,Jaws,Record,1-week,2,0.85,Horror
-I020-2001,The Lord of the Rings: The Fellowship of the Ring,DVD,2-day,3,2.5,Drama
+I020-2001,The Lord of the Rings: The Fellowship of the Ring,DVD,2-day,4,2.5,Drama
 I021-1982,E.T. the Extra-Terrestrial,Record,1-week,4,0.95,Drama
 I022-2018,Red Dead Redemption II,Game,1-week,1,9.99
 I023-2006,Cars,DVD,2-day,3,1.75,Comedy
@@ -37,7 +37,7 @@ I036-1993,Schindler's List,Record,1-week,2,1.0,Drama
 I037-2005,Resident Evil 4,Game,2-day,2,6.99
 I038-2017,Get Out,DVD,1-week,3,1.95,Horror
 I039-1997,Final Fantasy VII,Game,2-day,1,8.99
-I040-1984,Indiana Jones and the Temple of Doom,Record,1-week,3,1.1,Action
+I040-1984,Indiana Jones and the Temple of Doom,Record,1-week,4,1.1,Action
 I041-2019,Resident Evil 2 Remake,Game,1-week,2,9.99
 I042-2014,Interstellar,DVD,2-day,3,2.2,Drama
 I043-1987,The Princess Bride,Record,1-week,4,1.15,Comedy
