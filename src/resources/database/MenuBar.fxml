@@ -5,6 +5,8 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -37,14 +39,14 @@
         </MenuBar>
         <VBox layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="779.0" prefWidth="225.0" spacing="40.0" style="-fx-background-color: #4c4c4c;">
             <children>
-                <Button mnemonicParsing="false" onAction="#handleDashboardButton" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #ffa906;" text="Dashboard" textAlignment="CENTER">
-                    <VBox.margin>
-                        <Insets left="40.0" right="40.0" top="40.0" />
-                    </VBox.margin>
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-                </Button>
+            <ImageView fitHeight="202.0" fitWidth="187.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets left="20.0" top="30.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@../img/logo-square.png" />
+               </image>
+            </ImageView>
                 <Button mnemonicParsing="false" onAction="#handleRentButton" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #ffa906;" text="Rent" textAlignment="CENTER">
                     <VBox.margin>
                         <Insets left="40.0" right="40.0" />

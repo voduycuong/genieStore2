@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="788.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.CustomerDisplayController">
+
+<AnchorPane prefHeight="788.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.CustomerDisplayController">
     <children>
-        <TableView fx:id="customerTableView" layoutX="14.0" layoutY="107.0" prefHeight="362.0" prefWidth="942.0"
-                   AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0"
-                   AnchorPane.topAnchor="100.0">
+        <TableView fx:id="customerTableView" layoutX="14.0" layoutY="107.0" prefHeight="362.0" prefWidth="942.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0">
             <columns>
-                <TableColumn fx:id="customerIdCol" minWidth="0.0" prefWidth="71.0" text="ID"/>
-                <TableColumn fx:id="nameCol" prefWidth="242.0" text="Name"/>
-                <TableColumn fx:id="addressCol" prefWidth="214.0" text="Address"/>
-                <TableColumn fx:id="phoneCol" prefWidth="156.0" text="Phone"/>
-                <TableColumn fx:id="rentalsCol" minWidth="0.0" prefWidth="121.0" text="Number of Rentals"/>
-                <TableColumn fx:id="typeCol" prefWidth="111.0" text="Customer Type"/>
+                <TableColumn fx:id="customerIdCol" minWidth="0.0" prefWidth="71.0" text="ID" />
+                <TableColumn fx:id="nameCol" prefWidth="242.0" text="Name" />
+                <TableColumn fx:id="addressCol" prefWidth="214.0" text="Address" />
+                <TableColumn fx:id="phoneCol" prefWidth="156.0" text="Phone" />
+                <TableColumn fx:id="rentalsCol" minWidth="0.0" prefWidth="121.0" text="Number of Rentals" />
+                <TableColumn fx:id="typeCol" prefWidth="111.0" text="Customer Type" />
             </columns>
         </TableView>
-
-        <Label layoutX="352.0" layoutY="36.0" text="Customer Management Database">
-            <font>
-                <Font size="20.0"/>
-            </font>
-        </Label>
+      <Label layoutX="351.0" layoutY="21.0" prefHeight="66.0" prefWidth="298.0" text="Customers List">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

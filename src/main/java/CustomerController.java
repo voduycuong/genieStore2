@@ -5,12 +5,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.List;
 
 public class CustomerController {
     @FXML
@@ -29,18 +30,6 @@ public class CustomerController {
     private RadioButton regularRadio;
     @FXML
     private RadioButton vipRadio;
-    @FXML
-    private Button addButton;
-    @FXML
-    private Button updateButton;
-    @FXML
-    private Button promoteButton;
-    @FXML
-    private Button displayButton;
-    @FXML
-    private Button searchButton;
-    @FXML
-    private ToggleGroup levelGroup;
 
     private CustomerManager customerManager;
 

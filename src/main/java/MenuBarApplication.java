@@ -16,6 +16,7 @@ public class MenuBarApplication extends Application {
         Parent root = loader.load();
 
         primaryStage.setScene(new Scene(root));
+        primaryStage.setTitle("Dragon's Den");
         primaryStage.setResizable(false);
         primaryStage.show();
     }
