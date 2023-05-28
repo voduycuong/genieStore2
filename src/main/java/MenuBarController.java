@@ -13,12 +13,24 @@ import javafx.stage.StageStyle;
 import java.io.IOException;
 
 public class MenuBarController {
+    private RentalController rentalController;
+
+    private String currentUserId;
 
     private Stage stage;
 
     public void setStage(Stage stage) {
         this.stage = stage;
     }
+
+    public void setRentalController(RentalController rentalController) {
+        this.rentalController = rentalController;
+    }
+
+    public void setUserId(String currentUserId) {
+        this.currentUserId = currentUserId;
+    }
+
 
     @FXML
     private void handleItemMenuItem() {
@@ -30,6 +42,8 @@ public class MenuBarController {
             customerStage.setScene(new Scene(root));
             customerStage.setResizable(false);
             customerStage.setTitle("Items List");
+            RentalController rentalController = loader.getController();
+            rentalController.setCurrentUserId(currentUserId);
             customerStage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -99,15 +113,24 @@ public class MenuBarController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/database/RentItem.fxml"));
             Parent root = loader.load();
 
-            Stage customerStage = new Stage();
-            customerStage.setScene(new Scene(root));
-            customerStage.setResizable(false);
-            customerStage.setTitle("Rent Item");
-            customerStage.show();
+            Stage rentalStage = new Stage();
+            rentalStage.setScene(new Scene(root));
+            rentalStage.setResizable(false);
+            rentalStage.setTitle("Rent Item");
+
+            RentalController rentalController = loader.getController();
+            rentalController.setCurrentUserId(currentUserId);
+            System.out.println("Current User ID in menu: " + currentUserId);
+
+            rentalController.setStage(rentalStage); // Set the stage in RentalController
+
+            rentalStage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+
 
     @FXML
     private void handleReturnButton() {

@@ -9,6 +9,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.URL;
@@ -22,6 +23,8 @@ public class RentalController implements Initializable {
     private List<Customer> customers;
     private String currentUserId;
     private String currentItemId;
+    private Stage stage;
+
 
     @FXML
     private ImageView itemImageView;
@@ -40,21 +43,16 @@ public class RentalController implements Initializable {
         loadCustomers();
     }
 
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
+
     public void setCurrentUserId(String currentUserId) {
         this.currentUserId = currentUserId;
     }
 
     public void setCurrentItemId(String currentItemId) {
         this.currentItemId = currentItemId;
-    }
-
-    public void setItemDetails(String itemId) {
-        Item item = getItemById(itemId);
-        if (item != null) {
-            itemNameText.setText(item.getTitle());
-            amountText.setText("Amount: " + item.getNumberOfCopies());
-            yearText.setText("Year: " + item.getItemId());
-        }
     }
 
     @FXML
@@ -299,6 +297,18 @@ public class RentalController implements Initializable {
         return customers;
     }
 
+    private void displayItemDetails(Item item) {
+        System.out.println("Item ID: " + item.getItemId());
+        System.out.println("Title: " + item.getTitle());
+        System.out.println("Rent Type: " + item.getRentType());
+        System.out.println("Loan Type: " + item.getLoanType());
+        System.out.println("Number of Copies: " + item.getNumberOfCopies());
+        System.out.println("Rental Fee: " + item.getRentalFee());
+        if (item instanceof Record || item instanceof DVD) {
+            System.out.println("Genre: " + item.getGenre());
+        }
+    }
+
     @FXML
     private TableView<Item> itemTableView;
 
@@ -333,10 +343,18 @@ public class RentalController implements Initializable {
         feesCol.setCellValueFactory(new PropertyValueFactory<>("rentalFee"));
         genreCol.setCellValueFactory(new PropertyValueFactory<>("genre"));
 
+        itemTableView.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            if (newSelection != null) {
+                displayItemDetails(newSelection);
+                setCurrentItemId(newSelection.getItemId());
+            }
+        });
+
         List<Item> items = getItems();
         ObservableList<Item> itemObservableList = FXCollections.observableArrayList(items);
         itemTableView.setItems(itemObservableList);
-    }
+        System.out.println("Current User ID in rent: " + currentUserId);
 
+    }
 
 }

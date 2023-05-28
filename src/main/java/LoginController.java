@@ -27,6 +27,8 @@ public class LoginController {
     @FXML
     private PasswordField passwordField;
 
+    private RentalController rentalController;
+
     public void setStage(Stage stage) {
         this.stage = stage;
     }
@@ -52,7 +54,7 @@ public class LoginController {
             for (String customer : customerData) {
                 String[] fields = customer.split(",");
                 if (fields.length >= 8 && fields[6].trim().equals(username) && fields[7].trim().equals(password)) {
-                    currentUserId = fields[0].trim(); // Set the current user ID
+                    currentUserId = fields[0].trim();
                     showAlert("Login Successful!", "Welcome, " + fields[1].trim() + "!");
 
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/database/MenuBar.fxml"));
@@ -60,11 +62,18 @@ public class LoginController {
 
                     MenuBarController menuBarController = loader.getController();
                     menuBarController.setStage(stage);
+                    menuBarController.setRentalController(rentalController);
+                    menuBarController.setUserId(currentUserId);
                     stage.setTitle("Dragon's Den");
+
+                    RentalController rentalController = new RentalController();
+                    rentalController.setCurrentUserId(currentUserId);
 
                     Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
                     double centerX = screenBounds.getMinX() + (screenBounds.getWidth() / 2);
                     double centerY = screenBounds.getMinY() + (screenBounds.getHeight() / 2);
+                    System.out.println("Current User ID: " + currentUserId);
+
 
                     stage.setX(centerX - (1000 / 2));
                     stage.setY(centerY - (800 / 2));
@@ -85,6 +94,10 @@ public class LoginController {
     private List<String> readCustomerData() throws IOException {
         Path customersFilePath = Path.of("src/resources/database/customers.txt");
         return Files.readAllLines(customersFilePath);
+    }
+
+    public void setRentalController(RentalController rentalController) {
+        this.rentalController = rentalController;
     }
 
     @FXML
