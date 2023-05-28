@@ -32,7 +32,7 @@
                         <Insets top="10.0" />
                      </VBox.margin>
                   </Label>
-                  <Label prefHeight="239.0" prefWidth="342.0" style="-fx-font-size: 15px;" text="Welcome to our Rental Shop, where you can find a wide range of items available for rent. Whether you need equipment for an event, tools for a DIY project, or recreational gear for outdoor adventures, we have you covered. Our mission is to provide high-quality rental services with excellent customer satisfaction. Explore our collection and make your rental experience convenient and enjoyable." textAlignment="JUSTIFY" wrapText="true">
+                  <Label prefHeight="225.0" prefWidth="342.0" style="-fx-font-size: 15px;" text="Discover Dragon's Den, your ultimate rental destination for games, DVDs, movies, and records. Immerse yourself in thrilling adventures, captivating stories, and nostalgic tunes. Our extensive collection and friendly staff ensure a convenient and unforgettable rental experience. Visit Dragon's Den today and unlock entertainment at your fingertips.     " textAlignment="JUSTIFY" wrapText="true">
                      <font>
                         <Font size="10.0" />
                      </font>
