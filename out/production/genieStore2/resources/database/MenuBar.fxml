@@ -44,7 +44,7 @@
         </MenuBar>
         <VBox layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="779.0" prefWidth="225.0" spacing="40.0" style="-fx-background-color: #4c4c4c;">
             <children>
-                <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #ffa906;" text="Dashboard">
+                <Button mnemonicParsing="false" onAction="#handleDashboardMenuItem" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #ffa906;" text="Dashboard">
                     <VBox.margin>
                         <Insets left="40.0" right="40.0" top="40.0" />
                     </VBox.margin>
@@ -52,7 +52,7 @@
                   <Font name="Gurmukhi MN" size="22.0" />
                </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #ffa906;" text="Rent">
+                <Button mnemonicParsing="false" onAction="#handleRentMenuItem" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #ffa906;" text="Rent">
                     <VBox.margin>
                         <Insets left="40.0" right="40.0" />
                     </VBox.margin>
@@ -80,7 +80,7 @@
         </VBox>
         <HBox layoutX="316.0" layoutY="260.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="599.0">
             <children>
-                <fx:include source="slider.fxml" />
+                <fx:include source="dashboard.fxml" />
             </children>
         </HBox>
       <Text fill="#ffe200" layoutX="400.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FEATURED ITEMS">

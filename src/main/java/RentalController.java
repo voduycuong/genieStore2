@@ -7,6 +7,7 @@ import javafx.scene.text.Text;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class RentalController {
 
@@ -173,60 +174,45 @@ public class RentalController {
     }
 
 
-    private void loadItems() {
-        try (BufferedReader reader = new BufferedReader(new FileReader("src/resources/database/items.txt"))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                String[] data = line.split(",");
+    public List<Item> loadItems() {
+        List<Item> items = new ArrayList<>();
 
-                if (data.length >= 6) {
-                    String id = data[0];
-                    String title = data[1];
-                    String rentType = data[2];
-                    String loanType = data[3];
+        try {
+            File file = new File("src/resources/database/items.txt");
+            Scanner scanner = new Scanner(file);
 
-                    int numberOfCopies;
-                    try {
-                        numberOfCopies = Integer.parseInt(data[4]);
-                    } catch (NumberFormatException e) {
-                        System.out.println("Invalid number of copies format: " + line);
-                        continue;
-                    }
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                String[] parts = line.split(",");
 
-                    double rentalFee;
-                    try {
-                        rentalFee = Double.parseDouble(data[5]);
-                    } catch (NumberFormatException e) {
-                        System.out.println("Invalid rental fee format: " + line);
-                        continue;
-                    }
+                if (parts.length >= 6) {
+                    String itemId = parts[0];
+                    String title = parts[1];
+                    String rentType = parts[2];
+                    String loanType = parts[3];
+                    int numberOfCopies = Integer.parseInt(parts[4]);
+                    double rentalFee = Double.parseDouble(parts[5]);
 
                     String genre = "";
-                    if (data.length > 6) {
-                        genre = data[6];
+                    if (parts.length >= 7) {
+                        genre = parts[6];
                     }
 
-                    Item item;
-                    if (rentType.equalsIgnoreCase("Game")) {
-                        item = new Game(id, title, rentType, loanType, numberOfCopies, rentalFee, genre);
-                    } else if (rentType.equalsIgnoreCase("Record")) {
-                        item = new Record(id, title, rentType, loanType, numberOfCopies, rentalFee, genre);
-                    } else if (rentType.equalsIgnoreCase("DVD")) {
-                        item = new DVD(id, title, rentType, loanType, numberOfCopies, rentalFee, genre);
-                    } else {
-                        System.out.println("Invalid item data: " + line);
-                        continue;
-                    }
-
-
+                    Item item = new Item(itemId, title, rentType, loanType, numberOfCopies, rentalFee, genre);
                     items.add(item);
-                } else {
-                    System.out.println("Invalid item data: " + line);
                 }
             }
-        } catch (IOException e) {
-            System.out.println("Failed to load item data: " + e.getMessage());
+
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
+
+        return items;
+    }
+
+    public List<Item> getItems() {
+        return loadItems();
     }
 
     private void loadCustomers() {
