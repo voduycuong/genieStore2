@@ -4,10 +4,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.Alert;
+import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.*;
@@ -16,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class RentalController implements Initializable {
+public class ReturnController implements Initializable {
 
     private List<Item> items;
     private List<Customer> customers;
@@ -24,7 +26,11 @@ public class RentalController implements Initializable {
     private String currentItemId;
     private Stage stage;
 
-    public RentalController() {
+    @FXML
+    private Text currentUserText;
+
+
+    public ReturnController() {
         items = new ArrayList<>();
         customers = new ArrayList<>();
 
@@ -45,9 +51,9 @@ public class RentalController implements Initializable {
     }
 
     @FXML
-    public void rentItem() {
+    public void returnItem() {
         if (currentUserId == null || currentItemId == null) {
-            showAlert("Error", "No user or item selected.");
+            System.out.println("No user or item selected.");
             return;
         }
 
@@ -55,42 +61,15 @@ public class RentalController implements Initializable {
         Item item = getItemById(currentItemId);
 
         if (customer != null && item != null) {
-            if (item.isAvailable()) {
-                if (item.getLoanType().equals("2-day")) {
-                    if (customer.getCustomerType().equals("Guest")) {
-                        showAlert("Error", "Guest customers cannot borrow 2-day items.");
-                    } else if (customer.getCustomerType().equals("Regular") || customer.getCustomerType().equals("VIP")) {
-                        if (customer.getCustomerType().equals("VIP")) {
-                            customer.incrementRewardPoints(10);
-                            if (customer.getRewardPoints() >= 100) {
-                                showAlert("Success", "Congratulations! You have earned a free rental.");
-                                item.decreaseCopies(); // Rent the item for free
-                                customer.resetRewardPoints(); // Reset reward points
-                            }
-                        }
-                        item.decreaseCopies();
-                        customer.rentItem(currentItemId);
-                        showAlert("Success", "Item rented successfully.");
-                        updateItemsFile();
-                        updateCustomersFile();
-                    } else {
-                        showAlert("Error", "Only Regular and VIP customers can borrow 2-day items.");
-                    }
-                } else {
-                    item.decreaseCopies();
-                    customer.rentItem(currentItemId);
-                    showAlert("Success", "Item rented successfully.");
-                    updateItemsFile(); // Update the items.txt file
-                    updateCustomersFile(); // Update the customers.txt file
-                }
-            } else {
-                showAlert("Error", "Item is not available for rent.");
-            }
+            item.increaseCopies();
+            customer.returnItem(currentItemId); // Remove returned item from customer's list
+            showAlert("Success","Item returned successfully.");
+            updateItemsFile(); // Update the items.txt file
+            updateCustomersFile(); // Update the customers.txt file
         } else {
-            showAlert("Error", "Item or customer not found.");
+            System.out.println("Item or customer not found.");
         }
     }
-
 
     private void updateCustomersFile() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/resources/database/customers.txt"))) {
@@ -278,14 +257,6 @@ public class RentalController implements Initializable {
         }
     }
 
-    private void showAlert(String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
-
     @FXML
     private TableView<Item> itemTableView;
 
@@ -327,11 +298,30 @@ public class RentalController implements Initializable {
             }
         });
 
-        List<Item> items = getItems();
+        List<Item> rentedItems = new ArrayList<>();
+        for (Customer customer : getCustomers()) {
+            if (customer.getCustomerId().equals(currentUserId)) {
+                for (String itemId : customer.getRentedItems()) {
+                    Item rentedItem = getItemById(itemId);
+                    if (rentedItem != null) {
+                        rentedItems.add(rentedItem);
+                    }
+                }
+                break;
+            }
+        }
+
         ObservableList<Item> itemObservableList = FXCollections.observableArrayList(items);
         itemTableView.setItems(itemObservableList);
-        System.out.println("Current User ID in rent: " + currentUserId);
+        System.out.println("Current User ID in return: " + currentUserId);
+    }
 
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
 }
