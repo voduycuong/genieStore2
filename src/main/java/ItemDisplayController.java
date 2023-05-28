@@ -37,13 +37,8 @@ public class ItemDisplayController implements Initializable {
     @FXML
     private TableColumn<Item, String> genreCol;
 
-    ObservableList<Item> itemObservableList = FXCollections.observableArrayList();
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        RentalController rentalController = new RentalController();
-        List<Item> items = rentalController.getItems();
-
         idCol.setCellValueFactory(new PropertyValueFactory<>("itemId"));
         titleCol.setCellValueFactory(new PropertyValueFactory<>("title"));
         rentTypeCol.setCellValueFactory(new PropertyValueFactory<>("rentType"));
@@ -51,8 +46,6 @@ public class ItemDisplayController implements Initializable {
         copiesCol.setCellValueFactory(new PropertyValueFactory<>("numberOfCopies"));
         feesCol.setCellValueFactory(new PropertyValueFactory<>("rentalFee"));
         genreCol.setCellValueFactory(new PropertyValueFactory<>("genre"));
-
-        itemObservableList.addAll(items);
-        itemTableView.setItems(itemObservableList);
     }
+
 }
