@@ -165,12 +165,12 @@ public class MenuBarController {
     @FXML
     private void handleProfileButton() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/database/CustomerProfile.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/database/profile.fxml"));
             Parent root = loader.load();
 
             Stage customerStage = new Stage();
-            customerStage.setScene(new Scene(root));
             customerStage.setResizable(false);
+            customerStage.setScene(new Scene(root));
             customerStage.setTitle("Customer Profile");
             customerStage.show();
         } catch (IOException e) {

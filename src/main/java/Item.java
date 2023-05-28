@@ -44,7 +44,7 @@ public class Item {
     }
 
     public String getGenre() {
-        return genre;
+        return genre != null ? genre : "";
     }
 
     public boolean isAvailable() {

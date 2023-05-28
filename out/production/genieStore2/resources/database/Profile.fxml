@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<VBox prefHeight="359.0" prefWidth="354.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.MenuBarController">
+    <ImageView fitHeight="157.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@../img/logo-square.png"/>
+        </image>
+        <VBox.margin>
+            <Insets left="100.0" top="10.0"/>
+        </VBox.margin>
+    </ImageView>
+
+    <Label prefHeight="99.0" prefWidth="369.0" text="Name:" textFill="WHITE">
+        <padding>
+            <Insets left="10.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="getName"/>
+
+    <Label prefHeight="17.0" prefWidth="355.0" text="Customer ID:" textFill="WHITE">
+        <padding>
+            <Insets left="10.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="getCustomerId"/>
+
+    <Label prefHeight="17.0" prefWidth="354.0" text="Phone:" textFill="WHITE">
+        <padding>
+            <Insets left="10.0"/>
+        </padding>
+    </Label>
+    <Label fx:id="getPhone"/>
+
+    <Label prefHeight="17.0" prefWidth="353.0" text="Address:" textFill="WHITE">
+        <padding>
+            <Insets left="10.0"/>
+        </padding>
+    </Label>
+
+</VBox>

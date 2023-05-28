@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="485.0" prefWidth="718.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.RentalController">
+<AnchorPane prefHeight="800.0" prefWidth="910.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="main.java.ItemDisplayController">
     <children>
-        <TableView fx:id="itemTableView" layoutX="46.0" layoutY="81.0" prefHeight="319.0" prefWidth="583.0">
+        <TableView fx:id="itemTableView" layoutX="14.0" layoutY="107.0" prefHeight="362.0" prefWidth="942.0"
+                   AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0"
+                   AnchorPane.topAnchor="100.0">
             <columns>
-                <TableColumn fx:id="idCol" minWidth="1.0" prefWidth="92.0" text="ID" />
-                <TableColumn fx:id="titleCol" prefWidth="291.0" text="Title" />
-                <TableColumn fx:id="rentTypeCol" prefWidth="75.0" text="Rent type" />
-                <TableColumn fx:id="loanTypeCol" prefWidth="75.0" text="Loan type" />
-                <TableColumn fx:id="copiesCol" minWidth="0.0" prefWidth="102.0" text="Copies" />
-                <TableColumn fx:id="feesCol" prefWidth="138.0" text="Rental fees" />
-                <TableColumn fx:id="genreCol" prefWidth="96.0" text="Genre" />
+                <TableColumn fx:id="idCol" minWidth="1.0" prefWidth="92.0" text="ID"/>
+                <TableColumn fx:id="titleCol" prefWidth="291.0" text="Title"/>
+                <TableColumn fx:id="rentTypeCol" prefWidth="75.0" text="Rent type"/>
+                <TableColumn fx:id="loanTypeCol" prefWidth="75.0" text="Loan type"/>
+                <TableColumn fx:id="copiesCol" minWidth="0.0" prefWidth="102.0" text="Copies"/>
+                <TableColumn fx:id="feesCol" prefWidth="138.0" text="Rental fees"/>
+                <TableColumn fx:id="genreCol" prefWidth="96.0" text="Genre"/>
             </columns>
         </TableView>
-      <Label layoutX="360.0" layoutY="21.0" prefHeight="66.0" prefWidth="191.0" text="Items List">
-         <font>
-            <Font size="45.0" />
-         </font>
-      </Label>
+        <TextField fx:id="searchField" layoutX="606.0" layoutY="30.0" prefHeight="25.0" prefWidth="212.0"
+                   promptText="Enter search keyword"/>
+        <Button fx:id="searchButton" layoutX="838.0" layoutY="30.0" mnemonicParsing="false"
+                onAction="#handleSearchButton" text="Search"/>
+        <Label layoutX="20.0" layoutY="27.0" text="Item Management Database">
+            <font>
+                <Font size="21.0"/>
+            </font>
+        </Label>
     </children>
 </AnchorPane>
