@@ -5,10 +5,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
+import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -30,12 +28,59 @@ public class CustomerController {
     private RadioButton regularRadio;
     @FXML
     private RadioButton vipRadio;
+    @FXML
+    private Button addButton;
+    @FXML
+    private Button updateButton;
+    @FXML
+    private Button promoteButton;
+    @FXML
+    private Button displayButton;
+    @FXML
+    private Button searchButton;
+    @FXML
+    private ToggleGroup levelGroup;
+    @FXML
+    private TextField usernameField;
+    @FXML
+    private PasswordField passwordField;
 
     private CustomerManager customerManager;
+    private boolean isAdmin;
+    private Admin admin;
+
+    private void clearLoginFields() {
+        usernameField.clear();
+        passwordField.clear();
+    }
+
+    public void setAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
+        // Disable or enable UI elements based on the isAdmin flag
+        addButton.setDisable(!isAdmin);
+        updateButton.setDisable(!isAdmin);
+        promoteButton.setDisable(!isAdmin);
+        displayButton.setDisable(!isAdmin);
+    }
+
 
     public void initialize() {
         String databaseFilePath = "src\\resources\\database\\customers.txt";
         customerManager = new CustomerManager(databaseFilePath);
+        admin = new Admin("admin", "password");
+    }
+
+    @FXML
+    private void handleAdminLogin() {
+        String username = usernameField.getText();
+        String password = passwordField.getText();
+
+        if (admin.authenticate(username, password)) {
+            setAdmin(true);
+            clearLoginFields();
+        } else {
+            showErrorAlert("Invalid username or password.");
+        }
     }
 
     @FXML
@@ -68,6 +113,10 @@ public class CustomerController {
 
     @FXML
     private void handleUpdateButton(ActionEvent event) {
+//        if (!isAdmin) {
+//            showErrorAlert("Only admin can perform this action.");
+//            return;
+//        }
         String idText = idField.getText();
 
         if (idText.isEmpty()) {
@@ -110,6 +159,10 @@ public class CustomerController {
 
     @FXML
     private void handlePromoteButton(ActionEvent event) {
+//        if (!isAdmin) {
+//            showErrorAlert("Only admin can perform this action.");
+//            return;
+//        }
         String idText = idField.getText();
 
         if (idText.isEmpty()) {
@@ -149,6 +202,10 @@ public class CustomerController {
 
     @FXML
     private void handleDisplayButton() {
+//        if (!isAdmin) {
+//            showErrorAlert("Only admin can perform this action.");
+//            return;
+//        }
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/database/CustomerDisplay.fxml"));
             Parent root = loader.load();
@@ -164,6 +221,10 @@ public class CustomerController {
 
     @FXML
     private void handleSearchButton(ActionEvent event) {
+//        if (!isAdmin) {
+//            showErrorAlert("Only admin can perform this action.");
+//            return;
+//        }
         String query = searchField.getText();
 
         if (query.isEmpty()) {
