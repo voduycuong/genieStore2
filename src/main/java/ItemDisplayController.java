@@ -39,9 +39,7 @@ public class ItemDisplayController implements Initializable {
     @FXML
     private TableColumn<Item, String> gerneCol;
 
-    ObservableList<Item> itemObservableList = FXCollections.observableArrayList(
-            new Item("1", "2", "3", "4", 5, 6, "7")
-    );
+    ObservableList<Item> itemObservableList = FXCollections.observableArrayList();
 
     public void readFile() {
         String line = "";
@@ -53,27 +51,26 @@ public class ItemDisplayController implements Initializable {
             while ((line = br.readLine()) != null) // returns a Boolean value
             {
                 String[] items = line.split(splitBy); // use comma as separator
-                // Testing
-                System.out.println("-------------------------------");
-                System.out.println("1. ID:                 " + items[0]);
-                System.out.println("2. Title:              " + items[1]);
-                System.out.println("3. Rent type:          " + items[2]);
-                System.out.println("4. Loan type:          " + items[3]);
-                System.out.println("5. Number of copies:   " + items[4]);
-                System.out.println("6. Rental fee:         " + items[5]);
-                if (items.length == 6) {
-                    System.out.println("7. Genre: none");
-                } else {
-                    System.out.println("7. Genre: " + items[6]);
-                }
 
+//                // Testing
+//                System.out.println("-------------------------------");
+//                System.out.println("1. ID:                 " + items[0]);
+//                System.out.println("2. Title:              " + items[1]);
+//                System.out.println("3. Rent type:          " + items[2]);
+//                System.out.println("4. Loan type:          " + items[3]);
+//                System.out.println("5. Number of copies:   " + items[4]);
+//                System.out.println("6. Rental fee:         " + items[5]);
 //                if (items.length == 6) {
-//                    itemObservableList.add(new Item(items[0], items[1], items[2], items[3], 3, 6, "none"));
+//                    System.out.println("7. Genre: none");
 //                } else {
-//                    itemObservableList.add(new Item(items[0], items[1], items[2], items[3], 5, 6, items[6]));
+//                    System.out.println("7. Genre: " + items[6]);
 //                }
 
-
+                if (items.length == 6) {
+                    itemObservableList.add(new Item(items[0], items[1], items[2], items[3], 3, 6, "none"));
+                } else {
+                    itemObservableList.add(new Item(items[0], items[1], items[2], items[3], 5, 6, "none"));
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -82,7 +79,7 @@ public class ItemDisplayController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-//        readFile();
+        readFile();
 
         idCol.setCellValueFactory(new PropertyValueFactory<Item, String>("idCol"));
         titleCol.setCellValueFactory(new PropertyValueFactory<Item, String>("titleCol"));
