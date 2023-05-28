@@ -29,6 +29,9 @@ public class LoginController {
 
     private RentalController rentalController;
 
+    private ReturnController returnController;
+
+
     public void setStage(Stage stage) {
         this.stage = stage;
     }
@@ -64,22 +67,30 @@ public class LoginController {
                     menuBarController.setStage(stage);
                     menuBarController.setRentalController(rentalController);
                     menuBarController.setUserId(currentUserId);
+                    menuBarController.setReturnController(returnController);
+                    menuBarController.setUserId(currentUserId);
                     stage.setTitle("Dragon's Den");
 
                     RentalController rentalController = new RentalController();
                     rentalController.setCurrentUserId(currentUserId);
+
+                    ReturnController returnController = new ReturnController();
+                    returnController.setCurrentUserId(currentUserId);
+
+                    menuBarController.setRentalController(rentalController);
+                    menuBarController.setReturnController(returnController);
 
                     Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
                     double centerX = screenBounds.getMinX() + (screenBounds.getWidth() / 2);
                     double centerY = screenBounds.getMinY() + (screenBounds.getHeight() / 2);
                     System.out.println("Current User ID: " + currentUserId);
 
-
                     stage.setX(centerX - (1000 / 2));
                     stage.setY(centerY - (800 / 2));
 
                     stage.setScene(new Scene(root));
                     stage.show();
+
                     return;
                 }
             }

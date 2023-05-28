@@ -9,19 +9,27 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="479.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.RentalController">
+<?import javafx.scene.text.Text?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="479.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.ReturnController">
    <children>
+      <Text fx:id="currentUserText" />
+
       <Label layoutX="40.0" layoutY="38.0" text="Search:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
       <TextField layoutX="112.0" layoutY="35.0" prefHeight="25.0" prefWidth="249.0" />
-      <TableView layoutX="46.0" layoutY="81.0" prefHeight="319.0" prefWidth="701.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
-        </columns>
+      <TableView fx:id="itemTableView" layoutX="46.0" layoutY="81.0" prefHeight="319.0" prefWidth="701.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
+         <columns>
+            <TableColumn fx:id="idCol" prefWidth="75.0" text="ID" />
+            <TableColumn fx:id="titleCol" prefWidth="75.0" text="Title" />
+            <TableColumn fx:id="rentTypeCol" prefWidth="75.0" text="Rent Type" />
+            <TableColumn fx:id="loanTypeCol" prefWidth="75.0" text="Loan Type" />
+            <TableColumn fx:id="copiesCol" prefWidth="75.0" text="Copies" />
+            <TableColumn fx:id="feesCol" prefWidth="75.0" text="Rental Fees" />
+            <TableColumn fx:id="genreCol" prefWidth="75.0" text="Genre" />
+         </columns>
       </TableView>
       <CheckBox layoutX="384.0" layoutY="38.0" mnemonicParsing="false" text="ID">
          <font>
@@ -36,7 +44,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button defaultButton="true" layoutX="554.0" layoutY="418.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="84.0" text="Return">
+      <Button defaultButton="true" onAction="#returnItem" layoutX="554.0" layoutY="418.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="84.0" text="Return">
          <font>
             <Font size="16.0" />
          </font>

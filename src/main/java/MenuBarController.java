@@ -14,6 +14,7 @@ import java.io.IOException;
 
 public class MenuBarController {
     private RentalController rentalController;
+    private ReturnController returnController;
 
     private String currentUserId;
 
@@ -25,6 +26,10 @@ public class MenuBarController {
 
     public void setRentalController(RentalController rentalController) {
         this.rentalController = rentalController;
+    }
+
+    public void setReturnController(ReturnController returnController) {
+        this.returnController = returnController;
     }
 
     public void setUserId(String currentUserId) {
@@ -120,7 +125,7 @@ public class MenuBarController {
 
             RentalController rentalController = loader.getController();
             rentalController.setCurrentUserId(currentUserId);
-            System.out.println("Current User ID in menu: " + currentUserId);
+            System.out.println("Current User ID in rent menu: " + currentUserId);
 
             rentalController.setStage(rentalStage); // Set the stage in RentalController
 
@@ -130,19 +135,24 @@ public class MenuBarController {
         }
     }
 
-
-
     @FXML
     private void handleReturnButton() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/database/ReturnItem.fxml"));
             Parent root = loader.load();
 
-            Stage customerStage = new Stage();
-            customerStage.setScene(new Scene(root));
-            customerStage.setResizable(false);
-            customerStage.setTitle("Return Items");
-            customerStage.show();
+            Stage returnStage = new Stage();
+            returnStage.setScene(new Scene(root));
+            returnStage.setResizable(false);
+            returnStage.setTitle("Return Items");
+
+            ReturnController returnController = loader.getController();
+            returnController.setCurrentUserId(currentUserId);
+            returnController.setStage(returnStage);
+            System.out.println("Current User ID in return menu: " + currentUserId);
+
+
+            returnStage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
