@@ -1,18 +1,9 @@
 C001,Minh Dinh,18 Irwin Street,0421473243,3,VIP, minhdinh, 123456
-I001-2001
-I002-1988
-I005-2015
 C002,Hong Wang,20 Irwin Street,0424173255,0,Guest, wanghong98, 987654
 C003,Linh Nguyen,12 Brunswick Street,0424173255,1,Guest, linhtb, linhlinh
-I001-2001
-I002-1988
 C004,Antony Zinc,114 Fraser Avenue,0424512345,2,Guest, abookworm, booklover
-I003-1992
 C005,John Cain,45 Sydney Road,0424325123,1,Regular, johnthebaby, 123456
-I004-1999
 C006,Dylan Case,02 West Drive,0424125598,2,Regular, dylanc, 2222222
-I002-1988
-I003-1992
 C007,Jane Smith,25 Cherry Lane,0423753121,2,Regular,janesmith, janesmith123
 C008,Liam Johnson,37 Apple Street,0428123412,0,Guest,liamjohnson, liamjohnson123
 C009,Emma Williams,48 Berry Boulevard,0425123456,3,VIP,emmawilliams, emmawilliams123
@@ -129,7 +120,7 @@ C119,Lucas Parker,1348 Pear Boulevard,04872199850,3,Regular,lucasparker, parkerl
 C120,Elijah Reed,1360 Grape Street,04883290969,1,Guest,elijahreed, reedelijah123
 C121,Aiden Roberts,1372 Cherry Avenue,04894382078,0,Regular,aidenroberts, robertsaiden123
 C122,Benjamin Ross,1384 Apple Boulevard,04905473187,2,VIP,benjaminross, rossbenjamin123
-C123,Sebastian Shaw,1396 Berry Avenue,04916564296,3,Regular,sebastianshaw, shawsebastian123
+C123,Dũng,UUUU,123456789,0,Guest,username,password
 C124,William Thomas,1408 Orange Street,04927655305,1,Guest,williamthomas, thomaswilliam123
 C125,James Vincent,1420 Pear Boulevard,04938746414,0,Regular,jamesvincent, vincentjames123
 C126,Michael Watkins,1432 Grape Street,04949837523,2,VIP,michaelwatkins, watkinsmichael123

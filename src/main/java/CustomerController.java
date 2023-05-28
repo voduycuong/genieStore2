@@ -44,9 +44,9 @@ public class CustomerController {
     private CustomerManager customerManager;
 
     public void initialize() {
-        customerManager = new CustomerManager();
+        String databaseFilePath = "D:\\CODDING\\genieStore2\\src\\resources\\database\\customers.txt"; // Specify the actual file path here
+        customerManager = new CustomerManager(databaseFilePath);
     }
-
     @FXML
     private void handleAddButton(ActionEvent event) {
         String name = nameField.getText();
