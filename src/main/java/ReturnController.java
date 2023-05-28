@@ -61,15 +61,20 @@ public class ReturnController implements Initializable {
         Item item = getItemById(currentItemId);
 
         if (customer != null && item != null) {
-            item.increaseCopies();
-            customer.returnItem(currentItemId); // Remove returned item from customer's list
-            showAlert("Success","Item returned successfully.");
-            updateItemsFile(); // Update the items.txt file
-            updateCustomersFile(); // Update the customers.txt file
+            if (customer.getRentedItems().contains(currentItemId)) {
+                item.increaseCopies();
+                customer.returnItem(currentItemId); // Remove returned item from customer's list
+                showAlert("Success","Item returned successfully.");
+                updateItemsFile(); // Update the items.txt file
+                updateCustomersFile(); // Update the customers.txt file
+            } else {
+                showAlert("Error","You do not own this item.");
+            }
         } else {
             System.out.println("Item or customer not found.");
         }
     }
+
 
     private void updateCustomersFile() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/resources/database/customers.txt"))) {
@@ -283,6 +288,7 @@ public class ReturnController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        System.out.println("ReturnController initialized"); // Debug print statement
         idCol.setCellValueFactory(new PropertyValueFactory<>("itemId"));
         titleCol.setCellValueFactory(new PropertyValueFactory<>("title"));
         rentTypeCol.setCellValueFactory(new PropertyValueFactory<>("rentType"));
@@ -311,10 +317,11 @@ public class ReturnController implements Initializable {
             }
         }
 
-        ObservableList<Item> itemObservableList = FXCollections.observableArrayList(items);
+        ObservableList<Item> itemObservableList = FXCollections.observableArrayList(this.items);
         itemTableView.setItems(itemObservableList);
-        System.out.println("Current User ID in return: " + currentUserId);
+        currentUserText.setText("Current User ID: " + currentUserId);
     }
+
 
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
