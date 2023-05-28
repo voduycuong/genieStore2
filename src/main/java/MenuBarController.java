@@ -99,11 +99,6 @@ public class MenuBarController {
     }
 
     @FXML
-    private void handleAppearanceMenuItem() {
-        System.out.println("Appearance menu item clicked");
-    }
-
-    @FXML
     private void handleAboutMenuItem() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/database/AboutScreen.fxml"));
