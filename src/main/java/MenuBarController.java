@@ -67,6 +67,11 @@ public class MenuBarController {
     }
 
     @FXML
+    private void handleCreateItemsMenuItem() {
+        System.out.println("Create Items menu item clicked");
+    }
+
+    @FXML
     private void handleCustomerMenuItem() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/database/customer.fxml"));
